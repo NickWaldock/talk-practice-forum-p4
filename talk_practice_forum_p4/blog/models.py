@@ -21,7 +21,6 @@ class Post(models.Model):
     body = models.TextField()
     tags = models.CharField(max_length=100)
     featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
         
