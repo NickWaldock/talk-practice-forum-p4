@@ -1,0 +1,1 @@
+web: gunicorn talk_practice_forum_p4.wsgi
