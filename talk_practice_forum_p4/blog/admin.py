@@ -12,3 +12,12 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('body')
 
 
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('username', 'body', 'post', 'date', 'approved')
+    list_filter = ('approved', 'date')
+    search_fields = ('username', 'email', 'body')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(approved=True)
