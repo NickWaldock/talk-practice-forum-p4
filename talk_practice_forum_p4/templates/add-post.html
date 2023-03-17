@@ -1,9 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Add blog post...</h1>
 
+<h1 class="title-font">Add blog post...</h1>
+<div class="container-fluid">
+    <form method="post">
+        {% csrf_token %}
+
+        {{form.as_p}}
+        
+        <input type="submit">
+        <!-- <button type="submit" class="btn btn-secondary mt-3">PUBLISH</button> -->
+
+    </form>
+</div>
 
 {% endblock %}
 
 
+
+
+
+<!-- <h3 class="title-font mt-2">Add a title...</h3>
+        {{ form.title }}
+        <br>
+        <h5 class="title-font mt-2">Add a subtitle...</h5>
+        {{ form.subtitle }}
+        <br>
+        <h6 class="title-font mt-2">Your content...</h6>
+        {{ form.body }}
+        <br>
+        <h6 class="title-font mt-2">Add relevant tags...</h6>
+        {{ form.tags }}
+        <br> -->

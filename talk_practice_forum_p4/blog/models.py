@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -20,15 +21,18 @@ class Post(models.Model):
     updated_on = models.DateField(auto_now=True)
     body = models.TextField()
     tags = models.CharField(max_length=100)
-    featured_image = CloudinaryField('image', default='placeholder')
+    # featured_image = CloudinaryField('image', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
-    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-        
+    # likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+
     class Meta:
         ordering = ['-created_on']
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('home')
 
     def number_of_likes(self):
         return self.likes.count()
