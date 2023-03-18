@@ -1,13 +1,13 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Post, Comment
+from .models import Post
 from .forms import PostForm
 
 
 # View to list all posts
 class PostList(generic.ListView):
     model = Post
-    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    # queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     # paginate_by = 10
 
@@ -27,6 +27,6 @@ class AddPost(generic.CreateView):
     # fields = '__all__'
     # fields = ('title', 'author', 'subtitle', 'body', 'tags')
 
-    def get_object(self):
-        slug = self.kwargs.get("slug")
-        return get_object_or_404(Post, slug=slug)
+    # def get_object(self):
+    #     slug = self.kwargs.get("slug")
+    #     return get_object_or_404(Post, slug=slug)
