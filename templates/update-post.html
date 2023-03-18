@@ -2,16 +2,16 @@
 
 {% block content %}
 
-<h1 class="title-font">Add blog post...</h1>
+<h1 class="title-font">Update Post...</h1>
 <div class="container-fluid">
     <div class="form-group">
         <form method="post">
             {% csrf_token %}
 
-            {{form.as_p}}
+            {{ form.as_p }}
             
             <!-- <input class="btn btn-secondary" type="submit"> -->
-            <button class="btn btn-secondary mt-3">PUBLISH</button>
+            <button class="btn btn-secondary mt-3">UPDATE</button>
         </form>
     </div>
 </div>

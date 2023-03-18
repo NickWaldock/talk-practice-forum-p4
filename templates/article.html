@@ -7,3 +7,4 @@
 <small>{{ post.updated_on }}</small>
 <br>
 <p>{{ post.body }}</p>
+<a href="{% url 'update-post' post.pk %}">EDIT</a>

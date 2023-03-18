@@ -19,6 +19,7 @@
                       <p class="card-text body-font">{{post.subtitle}}</p>
                       <p class="card-text">{{post.author}}</p>
                       <p class="card-text"><small class="text-muted">{{post.updated_on}}</small></p>
+                      <small><a href="{% url 'update-post' post.pk %}">edit</a></small>
                     </div>
                   </div>
                 </div>
