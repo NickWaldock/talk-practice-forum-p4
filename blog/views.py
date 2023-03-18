@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Post, Comment
+from .forms import PostForm
 
 
 # View to list all posts
@@ -20,10 +21,11 @@ class PostView(generic.DetailView):
 # View to add a post
 class AddPost(generic.CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'add-post.html'
     slug_field = 'slug'
     # fields = '__all__'
-    fields = ('title', 'author', 'subtitle', 'body', 'tags')
+    # fields = ('title', 'author', 'subtitle', 'body', 'tags')
 
     def get_object(self):
         slug = self.kwargs.get("slug")

@@ -4,15 +4,16 @@
 
 <h1 class="title-font">Add blog post...</h1>
 <div class="container-fluid">
-    <form method="post">
-        {% csrf_token %}
+    <div class="form-group">
+        <form method="post">
+            {% csrf_token %}
 
-        {{form.as_p}}
-        
-        <input type="submit">
-        <!-- <button type="submit" class="btn btn-secondary mt-3">PUBLISH</button> -->
-
-    </form>
+            {{form.as_p}}
+            
+            <!-- <input class="btn btn-secondary" type="submit"> -->
+            <button class="btn btn-secondary mt-3">PUBLISH</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}
