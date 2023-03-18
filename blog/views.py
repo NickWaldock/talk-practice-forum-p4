@@ -6,9 +6,15 @@ from .models import Post, Comment
 # View to list all posts
 class PostList(generic.ListView):
     model = Post
-    # queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     # paginate_by = 10
+
+
+# View to view a single post in a single page
+class PostView(generic.DetailView):
+    model = Post
+    template_name = 'article.html'
 
 
 # View to add a post
