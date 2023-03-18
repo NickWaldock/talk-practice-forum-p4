@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from django.urls import reverse_lazy
 from .models import Post
 from .forms import PostForm, UpdateForm
 
@@ -8,6 +9,7 @@ from .forms import PostForm, UpdateForm
 class PostList(generic.ListView):
     model = Post
     # queryset = Post.objects.filter(status=1).order_by('-created_on')
+    queryset = Post.objects.order_by('-created_on')
     template_name = 'index.html'
     # paginate_by = 10
 
@@ -37,3 +39,9 @@ class UpdatePost(generic.UpdateView):
     form_class = UpdateForm
     template_name = 'update-post.html'
     
+
+# View to delete a post
+class DeletePost(generic.DeleteView):
+    model = Post
+    template_name = 'delete-post.html'
+    success_url = reverse_lazy('home')

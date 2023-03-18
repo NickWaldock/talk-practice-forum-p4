@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="title-font">Delete Post...</h1>
+<h3 class="title-font">Are you sure you want to delete:<br><em>{{ post.title }}</em></h3>
+<br><br>
+<div class="container-fluid">
+    <div class="form-group">
+        <form method="post">
+            {% csrf_token %}
+            
+            
+            <p><em>This cannot be undone!</em></p>
+            <button class="btn btn-danger mt-3"><strong>DELETE</strong></button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
