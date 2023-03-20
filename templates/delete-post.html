@@ -2,23 +2,46 @@
 
 {% block content %}
 
-<h1 class="title-font">Delete Post...</h1>
-<h3 class="title-font">Are you sure you want to delete:<br><em>{{ post.title }}</em></h3>
-<br><br>
-<div class="container-fluid">
-    <div class="form-group">
-        <form method="post">
-            {% csrf_token %}
-            
-            
-            <p><em>This cannot be undone!</em></p>
-            <button class="btn btn-danger mt-3"><strong>DELETE</strong></button>
-        </form>
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+    <h1 class="title-font">Delete Post...</h1>
+    <h3 class="title-font">Are you sure you want to delete:<br><em>{{ post.title }}</em></h3>
+    <br><br>
+    <div class="container-fluid">
+        <div class="form-group">
+            <form method="post">
+                {% csrf_token %}
+                <p><em>This cannot be undone!</em></p>
+                <button class="btn btn-danger mt-3"><strong>DELETE</strong></button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+
+    <!-- Displayed if the logged in user is not the author  -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="ms-4 mt-4">
+                <h3 class="title-font">You do not have permission to view this page</h3><br>
+                <button class="btn btn-secondary rounded-0">
+                    <a class="title-font text-decoration-none text-reset" href="{% url 'home' %}">RETURN</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+{% else %}
+<!-- Displayed if no user is logged in -->
+<div class="container">
+    <div class="row align-items-center">
+        <div class="ms-4 mt-4">
+            <h3 class="title-font">You do not have permission to view this page</h3><br>
+            <button class="btn btn-secondary rounded-0">
+                <a class="title-font text-decoration-none text-reset" href="{% url 'home' %}">RETURN</a>
+            </button>
+        </div>
     </div>
 </div>
+{% endif %}
 
 {% endblock %}
-
-
-
-

@@ -2,7 +2,6 @@
 
 {% block content %}
 
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10 col-12">
@@ -15,10 +14,12 @@
             <small class="title-font">{{ post.updated_on }}</small>
             <br>
             <p class="body-font mt-4">{{ post.body }}</p>
-            <button class="btn btn-secondary mt-4">
-                <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">EDIT</a>
-            </button>
-
+            <br>
+            {% if user.id == post.author.id %}
+                <button class="btn btn-secondary mt-4">
+                    <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">EDIT</a>
+                </button>
+            {% endif %}
         </div>
         <div class="col-lg-2 d-none d-lg-block">
             <div class="title-font">
