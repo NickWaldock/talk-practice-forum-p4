@@ -9,16 +9,15 @@
             {% csrf_token %}
 
             {{ form.as_p }}
-            
+
             <!-- <input class="btn btn-secondary" type="submit"> -->
             <button class="btn btn-secondary mt-3">UPDATE</button>
-            <a href="{% url 'delete-post' post.pk %}">DELETE</a>
         </form>
+        <button class="btn btn-danger">
+            <a class="text-reset text-decoration-none" href="{% url 'delete-post' post.pk %}">DELETE</a>
+        </button>
+
     </div>
 </div>
 
 {% endblock %}
-
-
-
-
