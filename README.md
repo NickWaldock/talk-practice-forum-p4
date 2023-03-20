@@ -21,5 +21,14 @@ https://forum.djangoproject.com/t/passing-slug-to-createview/4287
 All Auth
 https://django-allauth.readthedocs.io/en/latest/
 
+Messages
+https://docs.djangoproject.com/en/3.2/ref/contrib/messages/#using-messages-in-views-and-templates
+
+
+
+
+
+
+
 Random Text Generator - for post content
 https://randomtextgenerator.com/
