@@ -51,11 +51,15 @@ class DeletePost(generic.DeleteView):
     success_url = reverse_lazy('home')
 
 
-# View for displaying all posts within a certain category
+# View for creating new categories
 class AddCategory(generic.CreateView):
     model = Category
     template_name = 'add-category.html'
     fields = '__all__'
+
+
+# View for displaying all posts within a certain category
+
 
 
 # View for likes
