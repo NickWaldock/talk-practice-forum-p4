@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
-from .models import Post
+from .models import Post, Category
 from .forms import PostForm, UpdateForm
 
 
@@ -49,6 +49,13 @@ class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'delete-post.html'
     success_url = reverse_lazy('home')
+
+
+# View for displaying all posts within a certain category
+class AddCategory(generic.CreateView):
+    model = Category
+    template_name = 'add-category.html'
+    fields = '__all__'
 
 
 # View for likes

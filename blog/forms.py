@@ -1,12 +1,20 @@
 from django import forms
-from .models import Post
+from .models import Post, Category
+
+
+# Create a dynamic list of category items for use in PostForm
+# and Update form models
+categories = Category.objects.all().values_list('name', 'name')
+category_list = []
+for item in categories:
+    category_list.append(item)
 
 
 # Form for creating new posts
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'subtitle', 'author', 'body', 'tags')
+        fields = ('title', 'subtitle', 'category', 'author', 'body', 'tags')
 
         widgets = {  # For bootstrap form styling
             'title': forms.TextInput(
@@ -18,6 +26,11 @@ class PostForm(forms.ModelForm):
                        'placeholder': 'Add a bit more context...'
                        }),
             'author': forms.Select(attrs={'class': 'form-control'}),
+            'category': forms.Select(
+                choices=category_list,
+                attrs={'class': 'form-control',
+                    #    'placeholder': 'Choose a category...'
+                       }),
             'body': forms.Textarea(
                 attrs={'class': 'form-control',
                        'placeholder': 'What do you want to share?'
@@ -53,5 +66,3 @@ class UpdateForm(forms.ModelForm):
                        'placeholder': 'Add any relevant tags here!'
                        }),
         }
-
-

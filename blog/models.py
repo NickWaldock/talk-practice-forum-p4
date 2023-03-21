@@ -12,6 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=250, unique=True)
     # slug = models.SlugField(max_length=250, unique=True)
     subtitle = models.CharField(max_length=250, unique=True)
+    category = models.CharField(max_length=30, default='Other')
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -36,7 +37,19 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_on']
-   
+
+
+# Model for categorising posts
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('home')
+
+
 
 # Database model for comments
 # class Comment(models.Model):
