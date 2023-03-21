@@ -10,4 +10,5 @@ urlpatterns = [
     path('article/delete-post/<int:pk>', views.DeletePost.as_view(), name='delete-post'),
     path('like/<int:pk>', views.LikeView, name='like_post'),
     path('add-category/', views.AddCategory.as_view(), name='add-category'),
+    path('category/<str:category>/', views.Categories, name='category'),
 ]

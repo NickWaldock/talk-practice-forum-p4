@@ -30,7 +30,6 @@ class AddPost(generic.CreateView):
     form_class = PostForm
     template_name = 'add-post.html'
     slug_field = 'slug'
-    
 
     # def get_object(self):
     #     slug = self.kwargs.get("slug")
@@ -42,7 +41,7 @@ class UpdatePost(generic.UpdateView):
     model = Post
     form_class = UpdateForm
     template_name = 'update-post.html'
-    
+
 
 # View to delete a post
 class DeletePost(generic.DeleteView):
@@ -59,7 +58,11 @@ class AddCategory(generic.CreateView):
 
 
 # View for displaying all posts within a certain category
-
+def Categories(request, category):
+    category_posts = Post.objects.filter(category=category)
+    return render(request, 'categories.html',
+                  {'category': category, 'category_posts': category_posts}
+                  )
 
 
 # View for likes
