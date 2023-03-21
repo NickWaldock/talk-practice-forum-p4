@@ -16,6 +16,10 @@
             <br>
             <p class="body-font mt-4">{{ post.body }}</p>
             <br>
+            <form action="{% url 'like_post' post.pk %}" method="POST">
+                {% csrf_token %}
+                <button class="btn btn-primary btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">Like</button>
+            </form>
             {% if user.id == post.author.id %}
                 <button class="btn btn-secondary mt-4">
                     <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">EDIT</a>
@@ -29,8 +33,4 @@
         </div>
     </div>
 </div>
-
-
-
-
 {% endblock %}

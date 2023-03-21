@@ -2,6 +2,7 @@ from django import forms
 from .models import Post
 
 
+# Form for creating new posts
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -28,6 +29,7 @@ class PostForm(forms.ModelForm):
         }
 
 
+# Form for updating posts
 class UpdateForm(forms.ModelForm):
     class Meta:
         model = Post
@@ -51,3 +53,5 @@ class UpdateForm(forms.ModelForm):
                        'placeholder': 'Add any relevant tags here!'
                        }),
         }
+
+

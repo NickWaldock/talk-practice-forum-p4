@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import PostForm, UpdateForm
 
@@ -18,6 +19,9 @@ class PostList(generic.ListView):
 class PostView(generic.DetailView):
     model = Post
     template_name = 'article.html'
+
+    # def get_context_data(self, *args, **kwargs):
+    #     context = super(PostView, self)
 
 
 # View to add a post
@@ -45,3 +49,10 @@ class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'delete-post.html'
     success_url = reverse_lazy('home')
+
+
+# View for likes
+def LikeView(request, pk):
+    post = get_object_or_404(Post, id=request.POST.get('post_id'))
+    post.likes.add(request.user)
+    return HttpResponseRedirect(reverse('article', args=[str(pk)]))
