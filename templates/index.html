@@ -18,7 +18,7 @@
                       </h5>
                       <p class="card-text body-font">{{post.subtitle}}</p>
                       <p class="card-text">{{post.author}}</p>
-                      <p class="card-text">{{post.category}}</p>
+                      <a href="{% url 'category' post.category %}" class="card-text">{{post.category}}</a>
                       <p class="card-text"><small class="text-muted">{{post.updated_on}}</small></p>
                       {% if user.is_authenticated %}
                         {% if user.id == post.author.id %}
