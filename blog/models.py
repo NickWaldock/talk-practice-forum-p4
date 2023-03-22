@@ -49,7 +49,6 @@ class Post(models.Model):
 # Model for categorising posts
 class Category(models.Model):
     name = models.CharField(max_length=30, unique=True)
-    # slug = models.SlugField(max_length=30, null=False, unique=True)
 
     def __str__(self):
         return self.name

@@ -14,6 +14,13 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     # paginate_by = 10
 
+    # Context for the dynamic categories nav links
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(PostList, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
+
 
 # View to view a single post in a single page
 class PostView(generic.DetailView):
@@ -22,6 +29,13 @@ class PostView(generic.DetailView):
 
     # def get_context_data(self, *args, **kwargs):
     #     context = super(PostView, self)
+
+    # Context for the dynamic categories nav links
+    def get_context_data(self, *args, **kwargs):
+        category_menu = Category.objects.all()
+        context = super(PostView, self).get_context_data(*args, **kwargs)
+        context["category_menu"] = category_menu
+        return context
 
 
 # View to add a post
@@ -56,6 +70,12 @@ class AddCategory(generic.CreateView):
     template_name = 'add-category.html'
     fields = '__all__'
     
+
+# Displays a list of all the categories
+def CategoryList(request):
+    category_menu_list = Category.objects.all()
+    return render(request, 'category-list.html', {'category_menu_list': category_menu_list})
+
 
 
 # View for displaying all posts within a certain category

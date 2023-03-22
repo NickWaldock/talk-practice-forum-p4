@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Categories{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-10 col-12">
+            <h1 class="title-font">CATEGORIES</h1>
+            {% for item in category_menu_list %}
+            <h4>
+                <a class="body-font text-decoration-none text-reset" href="{% url 'category' item %}">
+                    {{ item }}
+                </a>
+            </h4>
+            {% endfor %}
+        </div>
+        <div class="col-lg-2 d-none d-lg-block">
+            <div class="title-font">
+                (TAGS & FOOTER HERE)
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
