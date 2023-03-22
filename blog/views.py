@@ -55,13 +55,15 @@ class AddCategory(generic.CreateView):
     model = Category
     template_name = 'add-category.html'
     fields = '__all__'
+    
 
 
 # View for displaying all posts within a certain category
 def Categories(request, category):
     category_posts = Post.objects.filter(category=category)
     return render(request, 'categories.html',
-                  {'category': category, 'category_posts': category_posts}
+                  {'category': category,
+                   'category_posts': category_posts}
                   )
 
 

@@ -7,7 +7,7 @@ admin.site.register(Category)
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-    list_display = ('title', 'author', 'created_on')
+    list_display = ('title', 'author', 'created_on', 'category')
     # list_display = ('title', 'author', 'slug', 'status', 'created_on')
     search_fields = ['title', 'subtitle', 'content', 'tags']
     # prepopulated_fields = {'slug': ('title',)}
