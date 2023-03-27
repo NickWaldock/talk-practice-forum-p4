@@ -22,19 +22,27 @@
             <p class="body-font mt-4">{{ post.body }}</p>
             <hr>
             <br>
+
+            <!-- Show the edit post button if the user is the author -->
+            {% if user.id == post.author.id %}
+                <button class="btn btn-secondary mt-4">
+                    <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">EDIT</a>
+                </button>
+            {% endif %}
+
+            <!-- Form for recording likes -->
             <form action="{% url 'like_post' post.pk %}" method="POST">
                 {% csrf_token %}
                 <button class="btn btn-primary btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">Like</button>
             </form>
-            
             <br>
+
             <!-- To display comments -->
             <h5 class="body-font">COMMENTS</h5>
             <br>
             {% if not post.comments.all %}
                 <p class="body-font">
-                    No comments yet, be the first to comment
-                    <a href="#">here</a>
+                    No comments yet, be the first to comment below!
                 </p>
             {% else %}
                 {% for comment in post.comments.all %}
@@ -50,13 +58,25 @@
                 <br>
                 {% endfor %}
             {% endif %}
+            <br>
 
+            <!-- Form to add comments -->
+            {% if user.is_authenticated %}
+            <div class="form-group">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary mt-3">ADD COMMENT</button>
+                </form>
+            </div>
 
-            {% if user.id == post.author.id %}
-                <button class="btn btn-secondary mt-4">
-                    <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">EDIT</a>
-                </button>
+        
+            {% else %}
+            <p class="body-font"><a href="{% url 'home' %}">Log in to comment on this post</a></p>
             {% endif %}
+
+
+            
         </div>
         <div class="col-lg-2 d-none d-lg-block">
             <div class="title-font">

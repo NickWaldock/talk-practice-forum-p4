@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
-from .models import Post, Category
+from .models import Post, Category, Comment
 from .forms import PostForm, UpdateForm, CommentForm
 
 
@@ -22,20 +22,28 @@ class PostList(generic.ListView):
         return context
 
 
-# View to view a single post in a single page
+# Display a single post in a single page
 class PostView(generic.DetailView):
     model = Post
     template_name = 'article.html'
-
-    # def get_context_data(self, *args, **kwargs):
-    #     context = super(PostView, self)
+    form_class = CommentForm
 
     # Context for the dynamic categories nav links
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
         context = super(PostView, self).get_context_data(*args, **kwargs)
+        context["form"] = CommentForm()
         context["category_menu"] = category_menu
         return context
+
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.username = request.user
+            comment.post_id = self.get_object().id
+            comment.save()
+            return redirect('article', self.get_object().id)
 
 
 # View to add a post
@@ -91,3 +99,11 @@ def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     post.likes.add(request.user)
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
+
+
+# View for adding comments
+class AddComment(generic.CreateView):
+    model = Comment
+    # form_class = CommentForm
+    template_name = 'add-comment.html'
+    fields = '__all__'

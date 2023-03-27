@@ -78,6 +78,8 @@ class Category(models.Model):
 #         return reverse('home')
 
 
+
+
 # Database model for comments
 class Comment(models.Model):
     post = models.ForeignKey(
