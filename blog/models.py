@@ -26,7 +26,6 @@ class Post(models.Model):
     tags = models.CharField(max_length=100)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     # featured_image = CloudinaryField('image', default='placeholder')
-    # status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
         return self.title

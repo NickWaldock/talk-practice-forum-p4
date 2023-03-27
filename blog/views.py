@@ -28,12 +28,15 @@ class PostView(generic.DetailView):
     template_name = 'article.html'
     form_class = CommentForm
 
-    # Context for the dynamic categories nav links
+    # Context for the dynamic categories nav links, likes, and comments
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
         context = super(PostView, self).get_context_data(*args, **kwargs)
+        likes = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = likes.number_of_likes()
         context["form"] = CommentForm()
         context["category_menu"] = category_menu
+        context["total_likes"] = total_likes
         return context
 
     def post(self, request, *args, **kwargs):

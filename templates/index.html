@@ -22,6 +22,7 @@
                         {{post.category}}
                       </a>
                       <p class="card-text body-font"><small class="text-muted">{{post.updated_on}}</small></p>
+                      <p>{{post.likes}}Likes</p>
                       {% if user.is_authenticated %}
                         {% if user.id == post.author.id %}
                         <small><a class="body-font" href="{% url 'update-post' post.pk %}">edit</a></small>

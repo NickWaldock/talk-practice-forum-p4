@@ -31,10 +31,13 @@
             {% endif %}
 
             <!-- Form for recording likes -->
-            <form action="{% url 'like_post' post.pk %}" method="POST">
-                {% csrf_token %}
-                <button class="btn btn-primary btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">Like</button>
-            </form>
+            <div class="form-group">
+                <form action="{% url 'like-post' post.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-primary btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">Like</button>
+                </form>
+                {{ total_likes }}
+            </div>
             <br>
 
             <!-- To display comments -->
@@ -80,7 +83,7 @@
         </div>
         <div class="col-lg-2 d-none d-lg-block">
             <div class="title-font">
-                (TAGS & FOOTER HERE)
+                (FOOTER HERE)
             </div>
         </div>
     </div>
