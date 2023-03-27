@@ -32,11 +32,15 @@ class PostView(generic.DetailView):
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
         context = super(PostView, self).get_context_data(*args, **kwargs)
-        likes = get_object_or_404(Post, id=self.kwargs['pk'])
-        total_likes = likes.number_of_likes()
+        likes_count = get_object_or_404(Post, id=self.kwargs['pk'])
+        total_likes = likes_count.number_of_likes()
+        liked = False
+        if likes_count.likes.filter(id=self.request.user.id).exists():
+            liked = True
         context["form"] = CommentForm()
         context["category_menu"] = category_menu
         context["total_likes"] = total_likes
+        context["liked"] = liked
         return context
 
     def post(self, request, *args, **kwargs):
@@ -100,7 +104,13 @@ def Categories(request, category):
 # View for likes
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
-    post.likes.add(request.user)
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
     return HttpResponseRedirect(reverse('article', args=[str(pk)]))
 
 

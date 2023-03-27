@@ -31,12 +31,18 @@
             {% endif %}
 
             <!-- Form for recording likes -->
+            {% if user.is_authenticated %}
             <div class="form-group">
                 <form action="{% url 'like-post' post.pk %}" method="POST">
                     {% csrf_token %}
-                    <button class="btn btn-primary btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">Like</button>
+                    {% if liked %}
+                        <button class="btn btn-danger btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">unlike</button>
+                    {% else %}
+                        <button class="btn btn-secondary btn-sm rounded-0" type="submit" name="post_id" value="{{ post.id }}">like</button>
+                    {% endif %}
                 </form>
-                {{ total_likes }}
+                {% endif %}
+                <p class="title-font">{{ total_likes }} - LIKES</p>
             </div>
             <br>
 
