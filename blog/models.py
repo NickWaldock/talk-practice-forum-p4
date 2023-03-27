@@ -56,6 +56,9 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
+
+
+
     # def get_absolute_url(self):
     #     return reverse('category', kwargs={'slug': self.slug})
 
@@ -76,20 +79,19 @@ class Category(models.Model):
 
 
 # Database model for comments
-# class Comment(models.Model):
-#     post = models.ForeignKey(
-#         Post,
-#         on_delete=models.CASCADE,
-#         related_name='comments'
-#     )
-#     username = models.CharField(max_length=40)
-#     email = models.EmailField()
-#     body = models.TextField()
-#     date = models.DateTimeField(auto_now_add=True)
-#     approved = models.BooleanField(default=False)
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='comments'
+    )
+    username = models.CharField(max_length=40)
+    body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
 
-#     class Meta:
-#         ordering = ['date']
+    class Meta:
+        ordering = ['date']
 
-#     def __str__(self):
-#         return f"Comment {self.body} by {self.name}"
+    def __str__(self):
+        return f"Comment {self.body} by {self.username}"

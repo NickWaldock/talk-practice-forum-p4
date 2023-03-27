@@ -17,14 +17,14 @@
                         <a class=" text-reset text-decoration-none" href="{% url 'article' post.pk %}">{{post.title}}</a>
                       </h5>
                       <p class="card-text body-font">{{post.subtitle}}</p>
-                      <p class="card-text">{{post.author}}</p>
-                      <a href="{% url 'category' post.category %}" class="card-text text-decoration-none text-reset">
+                      <p class="card-text body-font">{{post.author}}</p>
+                      <a href="{% url 'category' post.category %}" class="card-text title-font text-decoration-none text-reset">
                         {{post.category}}
                       </a>
-                      <p class="card-text"><small class="text-muted">{{post.updated_on}}</small></p>
+                      <p class="card-text body-font"><small class="text-muted">{{post.updated_on}}</small></p>
                       {% if user.is_authenticated %}
                         {% if user.id == post.author.id %}
-                        <small><a href="{% url 'update-post' post.pk %}">edit</a></small>
+                        <small><a class="body-font" href="{% url 'update-post' post.pk %}">edit</a></small>
                         {% endif %}
                       {% endif %}
                     </div>

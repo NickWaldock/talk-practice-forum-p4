@@ -3,7 +3,7 @@ from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 from .models import Post, Category
-from .forms import PostForm, UpdateForm
+from .forms import PostForm, UpdateForm, CommentForm
 
 
 # View to list all posts
@@ -75,7 +75,6 @@ class AddCategory(generic.CreateView):
 def CategoryList(request):
     category_menu_list = Category.objects.all()
     return render(request, 'category-list.html', {'category_menu_list': category_menu_list})
-
 
 
 # View for displaying all posts within a certain category

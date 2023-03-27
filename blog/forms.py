@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Category
+from .models import Post, Category, Comment
 
 
 # Create a dynamic list of category items for use in PostForm
@@ -66,3 +66,10 @@ class UpdateForm(forms.ModelForm):
                        'placeholder': 'Add any relevant tags here!'
                        }),
         }
+
+
+# Form for creating and submitting comments on posts
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('body',)
