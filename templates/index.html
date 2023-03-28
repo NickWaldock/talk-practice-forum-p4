@@ -28,7 +28,7 @@
                         {% if user.is_authenticated %}
                           {% if user.id == post.author.id %}
                           <br>
-                          <button class="btn btn-secondary btn-sm rounded-0 body-font ps-2">
+                          <button class="btn btn-secondary btn-color btn-sm rounded-0 body-font ps-2">
                             <a class="text-decoration-none text-reset" href="{% url 'update-post' post.pk %}">edit post</a>
                           </button>
                           {% endif %}

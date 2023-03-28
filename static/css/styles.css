@@ -35,9 +35,11 @@ font-family: 'Source Code Pro', monospace; */
 
 /* Footer Icons */
 .footer-icon {
-    color: #303030;"
+    color: #303030;
 }
 
-.footer {
-    position: fixed;
+/* Buttons */
+.btn-color {
+    background-color: #303030;
 }
+
