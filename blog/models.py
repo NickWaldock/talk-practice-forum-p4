@@ -6,9 +6,6 @@ from django.utils.text import slugify
 import uuid
 
 
-# STATUS = ((0, "Draft"), (1, "Published"))
-
-
 # Database model for blog posts
 class Post(models.Model):
     title = models.CharField(max_length=250, unique=False)
@@ -23,7 +20,6 @@ class Post(models.Model):
     created_on = models.DateField(auto_now=True)
     updated_on = models.DateField(auto_now=True)
     body = models.TextField()
-    tags = models.CharField(max_length=100)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
     # featured_image = CloudinaryField('image', default='placeholder')
 
