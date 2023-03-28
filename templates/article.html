@@ -6,7 +6,8 @@
 
 <div class="container-fluid mb-5">
     <div class="row">
-        <div class="col-lg-10 col-12">
+        <div class="col-12">
+            <!-- <div class="col-lg-10 col-12"> -->
             <!-- Category Link -->
             <div class="mt-4">
                 <a href="{% url 'category' post.category %}" class="text-decoration-none text-reset">
@@ -103,19 +104,9 @@
                     <button class="btn btn-secondary rounded-0 mt-3 body-font">add comment</button>
                 </form>
             </div>
-
-
             {% else %}
-            <p class="body-font"><a href="{% url 'home' %}">Log in to comment on this post</a></p>
+            <p class="body-font"><a href="{% url 'home' %}">log in to comment on this post</a></p>
             {% endif %}
-
-
-
-        </div>
-        <div class="col-lg-2 d-none d-lg-block">
-            <div class="title-font">
-                (FOOTER HERE)
-            </div>
         </div>
     </div>
 </div>

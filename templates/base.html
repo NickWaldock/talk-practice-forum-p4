@@ -16,6 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Source+Code+Pro:ital,wght@0,200;0,600;1,200&display=swap"
         rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/57b32cf6b6.js" crossorigin="anonymous"></script>
+
     <!-- Custom CSS -->
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
@@ -76,12 +79,11 @@
                     {% endif %}
                 </ul>
 
-                <!-- Nav element for logged in username displayed in nav bar -->
+                <!-- Nav element for logged-in username displayed in navbar -->
                 <div class="body-font text-white">
                     {{ user.username }}
                 </div>
                 
-            
             </div>
         </div>
     </nav>
@@ -96,8 +98,38 @@
         {% endfor %}
     </div>
 
-    {% block content %}
-    {% endblock %}
+    <!-- Main container div for content and allowing 
+         the footer to appear on the right of all pages -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 p-0">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="col-2 mt-3">
+                <a href="https://facebook.com" target="_blank" class="text-decoration-none text-reset">
+                    <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="text-decoration-none text-reset">
+                    <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="text-decoration-none text-reset">
+                    <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
+                </a>
+                <hr>
+                <p class="body-font">site created by
+                    <a href="https://www.nicholasjameswaldock.uk" target="_blank" class="text-decoration-none text-reset">
+                        nicholas james waldock</a>
+                        <br>
+                        <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i> march 2023
+                </p>
+                <p class="text-muted body-font mt-5">
+                    <small><em>this site is for demonstration purposes only</em></small>
+                </p>
+            </div>
+        </div>
+        
+    </div>
 
     <!-- Bootstrap Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
