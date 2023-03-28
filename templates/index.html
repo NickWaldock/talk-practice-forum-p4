@@ -4,34 +4,40 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 mt-3">
+
             {% for post in post_list %}
-            <div class="card mb-3" style="max-height: 200px;">
-                <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="/talk_practice_forum_p4/static/images/default-img.jpg" class="img-fluid rounded-start post-img" alt="">
-                  </div>
+            <div class="card mb-3 rounded-0 border-dark">
+                <div class="row">
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title title-font">
+                      <h4 class="card-title title-font">
                         <a class=" text-reset text-decoration-none" href="{% url 'article' post.pk %}">{{post.title}}</a>
-                      </h5>
+                      </h4>
                       <p class="card-text body-font">{{post.subtitle}}</p>
-                      <p class="card-text body-font">{{post.author}}</p>
-                      <a href="{% url 'category' post.category %}" class="card-text title-font text-decoration-none text-reset">
-                        {{post.category}}
-                      </a>
-                      <p class="card-text body-font"><small class="text-muted">{{post.updated_on}}</small></p>
-                      {% if user.is_authenticated %}
-                        {% if user.id == post.author.id %}
-                        <small><a class="body-font" href="{% url 'update-post' post.pk %}">edit</a></small>
+                      <h6 class="card-text title-font">{{post.author}}</h6>
+                      <p class="card-text body-font m-0">
+                        added to
+                        <a href="{% url 'category' post.category %}" class="card-text title-font text-decoration-none text-reset">
+                          <strong>{{post.category}}</strong>
+                        </a>
+                        on
+                        <small class="mb-0 text-muted">{{post.updated_on}}</small>
+                      </p>
+                        
+                        {% if user.is_authenticated %}
+                          {% if user.id == post.author.id %}
+                          <br>
+                          <button class="btn btn-secondary btn-sm rounded-0 body-font ps-2">
+                            <a class="text-decoration-none text-reset" href="{% url 'update-post' post.pk %}">edit post</a>
+                          </button>
+                          {% endif %}
                         {% endif %}
-                      {% endif %}
+                      
                     </div>
                   </div>
                 </div>
               </div>
-
             {% endfor %}
         </div>
     </div>
