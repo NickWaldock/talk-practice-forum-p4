@@ -13,6 +13,14 @@
         </form>
     </div>
 </div>
+
+<!-- JS to auto fill the author as logged-in
+     user in the form field for the database -->
+<script>
+    var loggedInAuthor = "{{ user.id }}";
+    document.getElementById("authorField").value = loggedInAuthor
+</script>
+
 {% else %}
 <!-- Displayed if no user is logged in -->
 <div class="container">

@@ -25,11 +25,17 @@ class PostForm(forms.ModelForm):
                 attrs={'class': 'form-control',
                        'placeholder': 'Add a bit more context...'
                        }),
-            'author': forms.Select(attrs={'class': 'form-control'}),
+            # 'author': forms.Select(attrs={'class': 'form-control'}),
+            'author': forms.TextInput(
+                attrs={'class': 'form-control',
+                       'value': '',
+                       'id': 'authorField',
+                       'type': 'hidden'
+                       }),
             'category': forms.Select(
                 choices=category_list,
                 attrs={'class': 'form-control',
-                    #    'placeholder': 'Choose a category...'
+                       #    'placeholder': 'Choose a category...'
                        }),
             'body': forms.Textarea(
                 attrs={'class': 'form-control',
