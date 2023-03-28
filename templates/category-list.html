@@ -6,19 +6,21 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10 col-12">
-            <h1 class="title-font">CATEGORIES</h1>
+            <h3 class="title-font my-5">SELECT A CATEGORY...</h3>
+            
             {% for item in category_menu_list %}
-            <h4>
-                <a class="body-font text-decoration-none text-reset" href="{% url 'category' item %}">
-                    {{ item }}
-                </a>
-            </h4>
+            <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
+                <div class="card mt-5  border-dark rounded-0">
+                    <div class="card-body body-font">
+                        <h4>
+                        
+                                {{ item }}
+                            
+                        </h4>
+                    </div>
+                </div>
+            </a>
             {% endfor %}
-        </div>
-        <div class="col-lg-2 d-none d-lg-block">
-            <div class="title-font">
-                (TAGS & FOOTER HERE)
-            </div>
         </div>
     </div>
 </div>
