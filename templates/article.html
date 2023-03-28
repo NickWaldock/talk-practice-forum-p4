@@ -23,33 +23,45 @@
             <br>
             <small class="title-font">{{ post.updated_on }}</small>
             <br>
-            <p class="body-font mt-4">{{ post.body }}</p>
+            <p class="body-font">{{ total_likes }} likes</p>
+            <p class="body-font">{{ post.body }}</p>
             <hr>
-            <br>
+
 
             <!-- Show the edit post button if the user is the author -->
             {% if user.id == post.author.id %}
-                <button class="btn btn-secondary mt-4 rounded-0 body-font">
-                    <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">edit</a>
-                </button>
-            {% endif %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-2 text-center">
+                        <button class="btn btn-secondary rounded-0 body-font btn-block">
+                            <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">edit</a>
+                        </button>
+                    </div>
 
-            <!-- Form for recording likes -->
-            {% if user.is_authenticated %}
-            <div class="form-group">
-                <form action="{% url 'like-post' post.pk %}" method="POST">
-                    {% csrf_token %}
-                    {% if liked %}
-                        <button class="btn btn-danger btn-sm rounded-0 body-font" type="submit" name="post_id" value="{{ post.id }}">unlike</button>
-                    {% else %}
-                        <button class="btn btn-secondary btn-sm rounded-0 body-font" type="submit" name="post_id" value="{{ post.id }}">like</button>
                     {% endif %}
-                </form>
-                {% endif %}
-                <p class="body-font">{{ total_likes }} - LIKES</p>
+
+                    <!-- Form for recording likes -->
+                    {% if user.is_authenticated %}
+                    <div class="col-2">
+                        <div class="form-group text-center">
+                            <form action="{% url 'like-post' post.pk %}" method="POST">
+                                {% csrf_token %}
+                                {% if liked %}
+                                <button class="btn btn-danger btn rounded-0 body-font btn-block" type="submit"
+                                    name="post_id" value="{{ post.id }}">unlike</button>
+                                {% else %}
+                                <button class="btn btn-secondary btn rounded-0 body-font" type="submit"
+                                    name="post_id" value="{{ post.id }}">like</button>
+                                {% endif %}
+                            </form>
+                            {% endif %}
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
             <br>
-
+            <br>
             <!-- Return Button -->
             <a href="{% url 'home' %}">
                 <button class="btn btn-secondary btn-sm rounded-0 body-font">
@@ -63,22 +75,22 @@
             <h5 class="body-font">COMMENTS</h5>
             <br>
             {% if not post.comments.all %}
-                <p class="body-font">
-                    No comments yet, be the first to comment below!
-                </p>
+            <p class="body-font">
+                No comments yet, be the first to comment below!
+            </p>
             {% else %}
-                {% for comment in post.comments.all %}
-                <p class="title-font">
-                    <strong>
-                        {{ comment.username }} -
-                        {{ comment.date }}
-                    </strong>
-                </p>
-                <p class="body-font">
-                    {{ comment.body }}
-                </p>
-                <br>
-                {% endfor %}
+            {% for comment in post.comments.all %}
+            <p class="title-font">
+                <strong>
+                    {{ comment.username }} -
+                    {{ comment.date }}
+                </strong>
+            </p>
+            <p class="body-font">
+                {{ comment.body }}
+            </p>
+            <br>
+            {% endfor %}
             {% endif %}
             <br>
 
@@ -92,13 +104,13 @@
                 </form>
             </div>
 
-        
+
             {% else %}
             <p class="body-font"><a href="{% url 'home' %}">Log in to comment on this post</a></p>
             {% endif %}
 
 
-            
+
         </div>
         <div class="col-lg-2 d-none d-lg-block">
             <div class="title-font">
