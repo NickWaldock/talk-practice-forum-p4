@@ -7,10 +7,13 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10 col-12">
-            <a href="{% url 'category' post.category %}" class="text-decoration-none text-reset">
-                <h4 class="body-font">{{ post.category }}</h4>
-                <p class="body-font text-muted">Click to view more posts relating to this category</p>
-            </a>
+            <div class="mt-4">
+                <a href="{% url 'category' post.category %}" class="text-decoration-none text-reset">
+                    <h4 class="body-font">This post is in the category: <strong>{{ post.category }}</strong></h4>
+                    <p class="body-font text-muted">Click to view more posts relating to this topic</p>
+                </a>
+            </div>
+            <hr>
             <br>
             <h1 class="title-font mt-3">{{ post.title }}</h1>
             <br>

@@ -5,10 +5,18 @@ References
 Summernote
 https://summernote.org/
 
+Python
+https://realpython.com/
+
 Elephant SQL Database
 Cloudinary media and static files hosting
 
+For logo design
+https://looka.com/
 
+CSS
+For navbar gradient
+https://mdbootstrap.com/docs/standard/tools/design/gradients/
 
 
 Django
