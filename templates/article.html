@@ -29,21 +29,13 @@
 
 
             <!-- Show the edit post button if the user is the author -->
-            {% if user.id == post.author.id %}
+            
             <div class="container">
                 <div class="row">
-                    <div class="col-2 text-center">
-                        <button class="btn btn-secondary rounded-0 body-font btn-block">
-                            <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">edit</a>
-                        </button>
-                    </div>
-
-                    {% endif %}
-
                     <!-- Form for recording likes -->
                     {% if user.is_authenticated %}
-                    <div class="col-2">
-                        <div class="form-group text-center">
+                    <div class="col-2 p-0">
+                        <div class="form-group">
                             <form action="{% url 'like-post' post.pk %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
@@ -55,9 +47,16 @@
                                 {% endif %}
                             </form>
                             {% endif %}
-                            
                         </div>
                     </div>
+                    <!-- Allow access to edit posts in user is the author -->
+                    {% if user.id == post.author.id %}
+                    <div class="col-2 p-0">
+                        <button class="btn btn-secondary rounded-0 body-font btn-block">
+                            <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">edit</a>
+                        </button>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             <br>
