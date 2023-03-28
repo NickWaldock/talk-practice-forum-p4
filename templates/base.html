@@ -102,11 +102,11 @@
          the footer to appear on the right of all pages -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-10 p-0">
+            <div class="col-12 col-lg-10 p-0">
                 {% block content %}
                 {% endblock %}
             </div>
-            <div class="col-2 mt-3">
+            <div class="col-2 mt-3 d-none d-lg-block">
                 <a href="https://facebook.com" target="_blank" class="text-decoration-none text-reset">
                     <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
                 </a>
@@ -124,11 +124,10 @@
                         <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i> march 2023
                 </p>
                 <p class="text-muted body-font mt-5">
-                    <small><em>this site is for demonstration purposes only</em></small>
+                    <small><em>-- this site is for demonstration purposes only</em></small>
                 </p>
             </div>
         </div>
-        
     </div>
 
     <!-- Bootstrap Scripts -->
