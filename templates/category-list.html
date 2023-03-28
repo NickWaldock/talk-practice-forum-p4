@@ -1,25 +1,24 @@
 {% extends 'base.html' %}
+
 {% block title %}Categories{% endblock %}
 
 {% block content %}
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-10 col-12">
+        <div class="">
             <h3 class="title-font my-5">SELECT A CATEGORY...</h3>
-            
+            <!-- Display all categories currently in the dynamic list -->
             {% for item in category_menu_list %}
-            <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
-                <div class="card mt-5  border-dark rounded-0">
-                    <div class="card-body body-font">
-                        <h4>
-                        
+                <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
+                    <div class="card mt-5  border-dark rounded-0">
+                        <div class="card-body body-font">
+                            <h4>
                                 {{ item }}
-                            
-                        </h4>
+                            </h4>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
             {% endfor %}
         </div>
     </div>

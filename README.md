@@ -18,6 +18,10 @@ CSS
 For navbar gradient
 https://mdbootstrap.com/docs/standard/tools/design/gradients/
 
+Card Hover
+https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
+
+
 
 Django
 https://ccbv.co.uk/projects/Django/4.1/django.views.generic.edit/CreateView/
