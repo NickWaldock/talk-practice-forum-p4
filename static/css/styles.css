@@ -10,6 +10,22 @@ font-family: 'Source Code Pro', monospace; */
     font-family: 'Source Code Pro', monospace;
 }
 
+/* Navbar */
+#nav-logo {
+    width: 10rem;
+}
+
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #000000;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(0,0,0,1), rgba(61,61,61,0.1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(61,61,61,0.1))
+  }
+
 /* Card Images */
 .post-img {
     width: 100%;
