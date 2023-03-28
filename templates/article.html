@@ -7,12 +7,14 @@
 <div class="container-fluid mb-5">
     <div class="row">
         <div class="col-lg-10 col-12">
+            <!-- Category Link -->
             <div class="mt-4">
                 <a href="{% url 'category' post.category %}" class="text-decoration-none text-reset">
                     <h4 class="body-font">This post is in the category: <strong>{{ post.category }}</strong></h4>
                     <p class="body-font text-muted">Click to view more posts relating to this topic</p>
                 </a>
             </div>
+            <!-- Post Content -->
             <hr>
             <br>
             <h1 class="title-font mt-3">{{ post.title }}</h1>
@@ -26,7 +28,6 @@
             <p class="body-font">{{ total_likes }} likes</p>
             <p class="body-font">{{ post.body }}</p>
             <hr>
-
 
             <div class="container">
                 <div class="row">
@@ -47,6 +48,7 @@
                             {% endif %}
                         </div>
                     </div>
+
                     <!-- Allow access to edit posts in user is the author -->
                     {% if user.id == post.author.id %}
                     <div class="col-2 p-0">
@@ -61,14 +63,14 @@
                     <div class="col-2 p-0">
                         <button class="btn btn-secondary rounded-0 btn-block float-end">
                             <a href="{% url 'home' %}" class="text-reset text-decoration-none">
-                                <h5 class="body-font m-0">return</h5>
+                                <p class="body-font m-0">return</p>
                             </a>
                         </button>
-                        
                     </div>
                 </div>
             </div>
             <hr>
+            <br>
             <!-- To display comments -->
             <h5 class="title-font mt-1">COMMENTS</h5>
             <br>
@@ -98,7 +100,7 @@
                 <form method="POST">
                     {% csrf_token %}
                     {{ form.as_table }}
-                    <button class="btn btn-secondary mt-3">ADD COMMENT</button>
+                    <button class="btn btn-secondary rounded-0 mt-3 body-font">add comment</button>
                 </form>
             </div>
 
