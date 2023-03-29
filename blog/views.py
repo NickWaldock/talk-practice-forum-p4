@@ -85,6 +85,10 @@ class AddCategory(generic.CreateView):
     model = Category
     template_name = 'add-category.html'
     fields = '__all__'
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Categories updated!')
+        return super().form_valid(form)
     
 
 # Displays a list of all the categories
@@ -118,7 +122,6 @@ def LikeView(request, pk):
 # View for adding comments
 class AddComment(generic.CreateView):
     model = Comment
-    # form_class = CommentForm
     template_name = 'add-comment.html'
     fields = '__all__'
 
