@@ -92,3 +92,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.username}"
+
+
+# Model for storing contact information
+class Contact(models.Model):
+    name = models.CharField(max_length=150)
+    email = models.EmailField(max_length=100)
+    subject = models.TextField(max_length=100)
+    message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    member = models.BooleanField(default=False)
+
+    def get_absolute_url(self):
+        return reverse('home')

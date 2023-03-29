@@ -25,6 +25,7 @@ https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
 
 Django
 https://ccbv.co.uk/projects/Django/4.1/django.views.generic.edit/CreateView/
+https://docs.djangoproject.com/
 
 Slugs
 https://forum.djangoproject.com/t/django-how-to-add-slug-as-arguments-in-url-tag-using-django/12636

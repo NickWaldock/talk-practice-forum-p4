@@ -2,8 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
-from .models import Post, Category, Comment
-from .forms import PostForm, UpdateForm, CommentForm
+from .models import Post, Category, Comment, Contact
+from .forms import PostForm, UpdateForm, CommentForm, ContactForm
 
 
 # View to list all posts
@@ -120,3 +120,11 @@ class AddComment(generic.CreateView):
     # form_class = CommentForm
     template_name = 'add-comment.html'
     fields = '__all__'
+
+
+# View to render the contact page
+class ContactView(generic.CreateView):
+    model = Contact
+    form_class = ContactForm
+    template_name = 'contact-form.html'
+    # fields = '__all__'

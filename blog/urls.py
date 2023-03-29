@@ -12,4 +12,5 @@ urlpatterns = [
     path('add-category/', views.AddCategory.as_view(), name='add-category'),
     path('category/<str:category>/', views.Categories, name='category'),
     path('category-list/', views.CategoryList, name='category-list'), 
+    path('contact/', views.ContactView.as_view(), name='contact'),
 ]

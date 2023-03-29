@@ -67,6 +67,9 @@
                             <a class="nav-link" href="{% url 'add-category' %}">ADD CATEGORY</a>
                         </li>
                         <li class="nav-item ms-3">
+                            <a class="nav-link" aria-current="page" href="{% url 'contact' %}">CONTACT US</a>
+                        </li>
+                        <li class="nav-item ms-3">
                             <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">LOGOUT</a>
                         </li>
                     {% else %}
@@ -77,6 +80,7 @@
                             <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">LOGIN</a>
                         </li>
                     {% endif %}
+                    
                 </ul>
 
                 <!-- Nav element for logged-in username displayed in navbar -->

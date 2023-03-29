@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Category, Comment
+from .models import Post, Category, Comment, Contact
 
 
 # Create a dynamic list of category items for use in PostForm
@@ -47,7 +47,6 @@ class UpdateForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'subtitle', 'body')
-
         widgets = {  # For bootstrap form styling
             'title': forms.TextInput(
                 attrs={'class': 'form-control',
@@ -76,3 +75,36 @@ class CommentForm(forms.ModelForm):
                        })
         }
         labels = {'body': ''}
+
+
+# Contact Form
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = 'name', 'email', 'subject', 'message', 'member'
+        widgets = {
+            'name': forms.TextInput(
+                attrs={'class': 'form-control',
+                       'placeholder': 'Name'
+                       }),
+            'email': forms.EmailInput(
+                attrs={'class': 'form-control',
+                       'placeholder': 'Email'
+                       }),
+            'subject': forms.TextInput(
+                attrs={'class': 'form-control',
+                       'placeholder': 'What is your message about?'
+                       }),
+            'message': forms.Textarea(
+                attrs={'class': 'form-control',
+                       'placeholder': 'Write your message here...'
+                       }),
+            'member': forms.CheckboxInput(),
+        }
+        labels = {
+            'name': '',
+            'email': '',
+            'subject': '',
+            'message': '',
+            'member': 'Are you a registered member?'
+        }
