@@ -72,13 +72,22 @@ class UpdatePost(generic.UpdateView):
     form_class = UpdateForm
     template_name = 'update-post.html'
 
+    def form_valid(self, form):
+        messages.success(self.request, 'Post updated!')
+        return super().form_valid(form)
+
 
 # View to delete a post
 class DeletePost(generic.DeleteView):
     model = Post
     template_name = 'delete-post.html'
     success_url = reverse_lazy('home')
+    success_message = 'Post deleted successfully'
 
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)
+        
 
 # View for creating new categories
 class AddCategory(generic.CreateView):
