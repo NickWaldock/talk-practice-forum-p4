@@ -18,27 +18,32 @@ class PostForm(forms.ModelForm):
 
         widgets = {  # For bootstrap form styling
             'title': forms.TextInput(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'Write a concise title...'
                        }),
             'subtitle': forms.TextInput(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'Add a bit more context...'
                        }),
             'author': forms.TextInput(
-                attrs={'class': 'form-control',
-                       'value': '',
+                attrs={'value': '',
                        'id': 'authorField',
                        'type': 'hidden'
                        }),
             'category': forms.Select(
                 choices=category_list,
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        }),
             'body': forms.Textarea(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'What do you want to share?'
                        }),
+        }
+        labels = {
+            'title': '',
+            'subtitle': '',
+            'category': 'Choose a category...',
+            'body': '',
         }
 
 

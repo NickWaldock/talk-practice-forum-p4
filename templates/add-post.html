@@ -3,16 +3,19 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<h1 class="title-font">Add blog post...</h1>
 <div class="container-fluid">
-    <div class="form-group">
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button class="btn btn-secondary mt-3">PUBLISH</button>
-        </form>
+    <div class="row">
+        <h3 class="title-font my-5">ADD A POST...</h3>
+        <div class="form-group form-font">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="btn btn-secondary mt-3 rounded-0 btn-color">publish</button>
+            </form>
+        </div>
     </div>
 </div>
+
 
 <!-- JS to auto fill the author as logged-in
      user in the form field for the database -->
@@ -35,5 +38,3 @@
 </div>
 {% endif %}
 {% endblock %}
-
-

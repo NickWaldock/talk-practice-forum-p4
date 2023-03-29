@@ -49,8 +49,13 @@
     border-radius: 0;
     width: 100%;
     font-family: 'Source Code Pro', monospace;
+    margin-bottom: 1em;
    
 }
 .form-label {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.form-font {
     font-family: 'Source Code Pro', monospace;
 }
