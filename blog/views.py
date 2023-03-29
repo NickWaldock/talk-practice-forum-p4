@@ -61,9 +61,9 @@ class AddPost(generic.CreateView):
     template_name = 'add-post.html'
     slug_field = 'slug'
 
-    # def get_object(self):
-    #     slug = self.kwargs.get("slug")
-    #     return get_object_or_404(Post, slug=slug)
+    def form_valid(self, form):
+        messages.success(self.request, 'Post created!')
+        return super().form_valid(form)
 
 
 # View to update a post
