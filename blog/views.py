@@ -10,10 +10,8 @@ from .forms import PostForm, UpdateForm, CommentForm, ContactForm
 # View to list all posts
 class PostList(generic.ListView):
     model = Post
-    # queryset = Post.objects.filter(status=1).order_by('-created_on')
     queryset = Post.objects.order_by('-created_on')
     template_name = 'index.html'
-    # paginate_by = 10
 
     # Context for the dynamic categories nav links
     def get_context_data(self, *args, **kwargs):
@@ -87,7 +85,7 @@ class DeletePost(generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, self.success_message)
         return super(DeletePost, self).delete(request, *args, **kwargs)
-        
+
 
 # View for creating new categories
 class AddCategory(generic.CreateView):
@@ -98,12 +96,16 @@ class AddCategory(generic.CreateView):
     def form_valid(self, form):
         messages.success(self.request, 'Categories updated!')
         return super().form_valid(form)
-    
+
 
 # Displays a list of all the categories
 def CategoryList(request):
     category_menu_list = Category.objects.all()
-    return render(request, 'category-list.html', {'category_menu_list': category_menu_list})
+    return render(
+        request,
+        'category-list.html',
+        {'category_menu_list': category_menu_list}
+    )
 
 
 # View for displaying all posts within a certain category
@@ -140,7 +142,7 @@ class ContactView(generic.CreateView):
     model = Contact
     form_class = ContactForm
     template_name = 'contact-form.html'
-    
+
     def form_valid(self, form):
         messages.success(self.request, 'Thank you for your message!')
         return super().form_valid(form)
