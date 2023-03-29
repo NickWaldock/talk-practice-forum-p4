@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Post, Category, Comment, Contact
 from .forms import PostForm, UpdateForm, CommentForm, ContactForm
 
@@ -127,4 +128,7 @@ class ContactView(generic.CreateView):
     model = Contact
     form_class = ContactForm
     template_name = 'contact-form.html'
-    # fields = '__all__'
+    
+    def form_valid(self, form):
+        messages.success(self.request, 'Thank you for your message!')
+        return super().form_valid(form)

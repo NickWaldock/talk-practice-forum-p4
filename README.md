@@ -1,4 +1,5 @@
-
+Improvments
+Page loading by 10 posts when there are multiple posts- pagination
 
 
 References
@@ -36,7 +37,7 @@ https://django-allauth.readthedocs.io/en/latest/
 
 Messages
 https://docs.djangoproject.com/en/3.2/ref/contrib/messages/#using-messages-in-views-and-templates
-
+https://stackoverflow.com/questions/24914637/show-a-successful-message-with-class-based-views
 
 
 

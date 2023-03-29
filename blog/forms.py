@@ -108,3 +108,4 @@ class ContactForm(forms.ModelForm):
             'message': '',
             'member': ''
         }
+        
