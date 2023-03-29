@@ -84,27 +84,27 @@ class ContactForm(forms.ModelForm):
         fields = 'name', 'email', 'subject', 'message', 'member'
         widgets = {
             'name': forms.TextInput(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'Name'
                        }),
             'email': forms.EmailInput(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'Email'
                        }),
             'subject': forms.TextInput(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'What is your message about?'
                        }),
             'message': forms.Textarea(
-                attrs={'class': 'form-control',
+                attrs={'class': 'form-field',
                        'placeholder': 'Write your message here...'
                        }),
-            'member': forms.CheckboxInput(),
+            'member': forms.CheckboxInput()
         }
         labels = {
             'name': '',
             'email': '',
             'subject': '',
             'message': '',
-            'member': 'Are you a registered member?'
+            'member': ''
         }
