@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Category, Comment
+from .models import Post, Category, Comment, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 admin.site.register(Category)
@@ -25,3 +25,11 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'message', 'member', 'date')
+    list_filter = ('date', 'name', 'member')
+    search_fields = ['name', 'subject']
+    summernote_fields = ('message')

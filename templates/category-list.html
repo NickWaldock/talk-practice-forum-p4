@@ -6,21 +6,19 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="">
-            <h3 class="title-font my-5">SELECT A CATEGORY...</h3>
-            <!-- Display all categories currently in the dynamic list -->
-            {% for item in category_menu_list %}
-                <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
-                    <div class="card mt-5  border-dark rounded-0">
-                        <div class="card-body body-font">
-                            <h4>
-                                {{ item }}
-                            </h4>
-                        </div>
+        <h3 class="title-font mt-5">SELECT A CATEGORY...</h3>
+        <!-- Display all categories currently in the dynamic list -->
+        {% for item in category_menu_list %}
+            <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
+                <div class="card mt-5  border-dark rounded-0">
+                    <div class="card-body body-font">
+                        <h4>
+                            {{ item }}
+                        </h4>
                     </div>
-                </a>
-            {% endfor %}
-        </div>
+                </div>
+            </a>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
