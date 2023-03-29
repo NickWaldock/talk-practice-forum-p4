@@ -59,3 +59,7 @@
 .form-font {
     font-family: 'Source Code Pro', monospace;
 }
+
+label[for=id_name] {
+    display: none;
+}
