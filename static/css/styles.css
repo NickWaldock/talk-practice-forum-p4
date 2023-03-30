@@ -70,3 +70,9 @@ label[for=id_password2],
 label[for=id_login] {
     display: none;
 }
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}

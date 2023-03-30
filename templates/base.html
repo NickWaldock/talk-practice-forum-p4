@@ -102,46 +102,48 @@
         {% endfor %}
     </div>
 
-    <!-- Main container div for content and allowing 
-         the footer to appear on the right of all pages -->
+    <!-- Main container div for content -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-lg-10 p-0">
                 {% block content %}
                 {% endblock %}
             </div>
+            <!-- Footer sidebar to appear on the right-hand-side of all pages -->
             <div class="col-2 mt-3 d-none d-lg-block">
-                <div class="d-flex justify-content-center">
-                    <a href="https://facebook.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                        <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
-                    </a>
-                    <a href="https://instagram.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                        <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
-                    </a>
-                    <a href="https://github.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                        <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
-                    </a>
-                    <a href="https://youtube.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                        <i class="fa-brands fa-square-youtube fa-2xl"></i>
-                    </a>
-                    <a href="https://twitter.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                        <i class="fa-brands fa-square-twitter fa-2xl"></i>
-                    </a>
+                <div class="sticky-top mt-3" style="top: 0.5em;"> <!-- Sticky property -->
+                    <div class="d-flex justify-content-center">
+                        <a href="https://facebook.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                            <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                            <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                            <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                            <i class="fa-brands fa-square-youtube fa-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                            <i class="fa-brands fa-square-twitter fa-2xl"></i>
+                        </a>
+                    </div>
+                    <hr>
+                    <p class="body-font">site created by
+                        <a href="https://www.nicholasjameswaldock.uk" target="_blank" class="text-decoration-none text-reset">
+                            nicholas james waldock</a>
+                            <br>
+                            <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i> march 2023
+                    </p>
+                    <p class="text-muted body-font mt-5">
+                        <small><em>-- this site is for demonstration purposes only</em></small>
+                    </p>
+                    <p class="body-font mt-5">
+                        have an idea to help improve the site? 
+                        <a class="nav-link" aria-current="page" href="{% url 'contact' %}">drop us a message here</a>
+                    </p>
                 </div>
-                <hr>
-                <p class="body-font">site created by
-                    <a href="https://www.nicholasjameswaldock.uk" target="_blank" class="text-decoration-none text-reset">
-                        nicholas james waldock</a>
-                        <br>
-                        <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i> march 2023
-                </p>
-                <p class="text-muted body-font mt-5">
-                    <small><em>-- this site is for demonstration purposes only</em></small>
-                </p>
-                <p class="body-font mt-5">
-                    have an idea to help improve the site? 
-                    <a class="nav-link" aria-current="page" href="{% url 'contact' %}">drop us a message here</a>
-                </p>
             </div>
         </div>
     </div>
