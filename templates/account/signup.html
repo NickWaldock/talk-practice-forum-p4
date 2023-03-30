@@ -9,18 +9,18 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8 mt-5 ms-5">
-      <h1 class="title-font">{% trans "REGISTER" %}</h1>
+      <h3 class="title-font">{% trans "REGISTER" %}</h3>
 
-      <p class="body-font">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
+      <p class="body-font my-3">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
           in</a>.{% endblocktrans %}</p>
 
-      <form class="signup title-font" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      <form class="signup title-font my-4" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" class="my-4"/>
         {% endif %}
-        <button class="btn btn-secondary rounded-0 title-font" type="submit">{% trans "CREATE ACCOUNT" %} &raquo;</button>
+        <button class="btn btn-secondary btn-color rounded-0 title-font mt-3" type="submit">{% trans "CREATE ACCOUNT" %} &raquo;</button>
       </form>
     </div>
   </div>

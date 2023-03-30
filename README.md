@@ -2,6 +2,7 @@ Improvments
 Page loading by 10 posts when there are multiple posts- pagination
 Save post as draft
 Sidebar becomes footer in md and small screens
+Reset password / forgotten password links
 
 
 References
