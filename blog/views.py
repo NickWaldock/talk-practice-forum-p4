@@ -13,6 +13,7 @@ class Welcome(generic.TemplateView):
 
 
 # View to list all posts
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('-created_on')
