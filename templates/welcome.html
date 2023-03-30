@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Source+Code+Pro:ital,wght@0,200;0,600;1,200&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+
+    <title>Welcome the Talk Practice Forum!</title>
+</head>
+<body>
+    
+<div class="container-fluid" style="height: 100vh;">
+
+    <div class="row h-100 d-flex align-items-center">
+        <div class="col"></div>
+        <div class="col-8">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="d-flex justify-content-center border border-1 border-dark shadow-lg mb-5">
+                    <img src="{% static 'images/tp-logo-light.png' %}" class="" alt="Talk Practice Logo">
+                </div>
+                <p class="lead title-font mt-3">welcome to TALK PRACTICE! the best place on the web to learn about and discuss practice</p>
+                <hr class="my-4 border border-dark border-3">
+                <p class="body-font">login or register below to begin reading and join the community of artists dedicated to improving their practice!</p>
+                <div class="body-font mt-5 offset-3">
+                    <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
+                    <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+
+</body>
+</html>

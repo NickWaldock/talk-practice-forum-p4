@@ -7,6 +7,11 @@ from .models import Post, Category, Comment, Contact
 from .forms import PostForm, UpdateForm, CommentForm, ContactForm
 
 
+# View for the Welcome page
+class Welcome(generic.TemplateView):
+    template_name = 'welcome.html'
+
+
 # View to list all posts
 class PostList(generic.ListView):
     model = Post

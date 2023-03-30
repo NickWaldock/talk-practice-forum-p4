@@ -40,6 +40,9 @@
     background-color: #303030;
 }
 
+.btn:hover{
+    transform: scale(1.05);
+}
 
 /* Card Hover Effects */
 .card:hover{
