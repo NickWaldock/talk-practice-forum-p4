@@ -39,6 +39,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                     <!-- Dynamic Category Menu -->
                     {% if category_menu %}
                     <li class="nav-item dropdown ms-3">
@@ -67,9 +68,6 @@
                             <a class="nav-link" href="{% url 'add-category' %}">ADD CATEGORY</a>
                         </li>
                         <li class="nav-item ms-3">
-                            <a class="nav-link" aria-current="page" href="{% url 'contact' %}">CONTACT US</a>
-                        </li>
-                        <li class="nav-item ms-3">
                             <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">LOGOUT</a>
                         </li>
                     {% else %}
@@ -80,7 +78,9 @@
                             <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">LOGIN</a>
                         </li>
                     {% endif %}
-                    
+                    <li class="nav-item ms-3">
+                        <a class="nav-link" aria-current="page" href="{% url 'contact' %}">CONTACT US</a>
+                    </li>
                 </ul>
 
                 <!-- Nav element for logged-in username displayed in navbar -->
@@ -137,6 +137,10 @@
                 </p>
                 <p class="text-muted body-font mt-5">
                     <small><em>-- this site is for demonstration purposes only</em></small>
+                </p>
+                <p class="body-font mt-5">
+                    have an idea to help improve the site? 
+                    <a class="nav-link" aria-current="page" href="{% url 'contact' %}">drop us a message here</a>
                 </p>
             </div>
         </div>
