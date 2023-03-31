@@ -30,7 +30,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg nav-color title-font nav-color-custom" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md nav-color title-font nav-color-custom" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand title-font" href="{% url 'home' %}">
                 <img src="{% static 'images/tp-logo-dark.png' %}" id="nav-logo" alt="logo">
@@ -110,27 +110,27 @@
     <!-- Main container div for content -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-lg-10 p-0">
+            <div class="col-12 col-md-10 p-0">
                 {% block content %}
                 {% endblock %}
             </div>
-            <!-- Footer sidebar to appear on the right-hand-side of all pages -->
-            <div class="col-2 mt-3 d-none d-lg-block">
-                <div class="sticky-top mt-3" style="top: 0.5em;"> <!-- Sticky property -->
-                    <div class="d-flex justify-content-center">
-                        <a href="https://facebook.com" target="_blank" class="px-1 text-decoration-none text-reset">
+            <!-- Sticky sidebar to appear on the right-hand-side of all pages -->
+            <div class="col-2 mt-3 d-none d-md-block">
+                <div class="sticky-top mt-3" style="top: 0.5em;">
+                    <div class="d-flex flex-wrap flex-lg-nowrap justify-content-lg-center">
+                        <a href="https://facebook.com" target="_blank" class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
                             <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
                         </a>
-                        <a href="https://instagram.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <a href="https://instagram.com" target="_blank" class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
                             <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
                         </a>
-                        <a href="https://github.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <a href="https://github.com" target="_blank" class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
                             <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
                         </a>
-                        <a href="https://youtube.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <a href="https://youtube.com" target="_blank" class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
                             <i class="fa-brands fa-square-youtube fa-2xl"></i>
                         </a>
-                        <a href="https://twitter.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <a href="https://twitter.com" target="_blank" class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
                             <i class="fa-brands fa-square-twitter fa-2xl"></i>
                         </a>
                     </div>
