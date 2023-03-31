@@ -30,7 +30,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md nav-color title-font nav-color-custom" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md nav-color text-nowrap title-font nav-color-custom" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand title-font" href="{% url 'home' %}">
                 <img src="{% static 'images/tp-logo-dark.png' %}" id="nav-logo" alt="logo">
@@ -41,11 +41,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto">
 
                     <!-- Dynamic Category Menu -->
                     {% if category_menu %}
-                    <li class="nav-item dropdown ms-3">
+                    <li class="nav-item dropdown ms-2">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           CATEGORIES
                         </a>
@@ -56,7 +56,7 @@
                         </div>
                     </li>
                     {% else %}
-                    <li class="nav-item ms-3">
+                    <li class="nav-item ms-2">
                         <a class="nav-link" href="{% url 'category-list' %}">
                             CATEGORIES
                         </a>
@@ -64,26 +64,26 @@
                     {% endif %}    
                     <!-- Nav links related to user authentication status -->
                     {% if user.is_authenticated %}
-                        <li class="nav-item ms-3">
+                        <li class="nav-item ms-2">
                             <a class="nav-link" href="{% url 'add-post' %}">ADD POST</a>
                         </li>
                         {% if user.is_staff %}
-                        <li class="nav-item ms-3">
+                        <li class="nav-item ms-2">
                             <a class="nav-link" href="{% url 'add-category' %}">ADD CATEGORY</a>
                         </li>
                         {% endif %}
-                        <li class="nav-item ms-3">
+                        <li class="nav-item ms-2">
                             <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">LOGOUT</a>
                         </li>
                     {% else %}
-                    <li class="nav-item ms-3">
+                    <li class="nav-item ms-2">
                         <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}">CREATE ACCOUNT</a>
                     </li>
-                        <li class="nav-item ms-3">
+                        <li class="nav-item ms-2">
                             <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">LOGIN</a>
                         </li>
                     {% endif %}
-                    <li class="nav-item ms-3">
+                    <li class="nav-item ms-2">
                         <a class="nav-link" aria-current="page" href="{% url 'contact' %}">CONTACT US</a>
                     </li>
                 </ul>
