@@ -1,24 +1,40 @@
 {% extends 'base.html' %}
 
-{% block title %}Categories{% endblock %}
-
 {% block content %}
+{% if user.is_authenticated %}
+    {% block title %}Categories{% endblock %}
 
-<div class="container-fluid">
-    <div class="row">
-        <h3 class="title-font mt-5">SELECT A CATEGORY...</h3>
-        <!-- Display all categories currently in the dynamic list -->
-        {% for item in category_menu_list %}
-            <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
-                <div class="card mt-5  border-dark rounded-0">
-                    <div class="card-body body-font">
-                        <h4>
-                            {{ item }}
-                        </h4>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <h3 class="title-font mt-5">SELECT A CATEGORY...</h3>
+            <!-- Display all categories currently in the dynamic list -->
+            {% for item in category_menu_list %}
+                <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
+                    <div class="card mt-5  border-dark rounded-0">
+                        <div class="card-body body-font">
+                            <h4>
+                                {{ item }}
+                            </h4>
+                        </div>
                     </div>
-                </div>
-            </a>
-        {% endfor %}
+                </a>
+            {% endfor %}
+        </div>
     </div>
-</div>
+    
+{% else %}
+    <!-- Display if user navigates to page and isn't logged in -->
+    <div class="row">
+        <div class="col">
+            <p class="body-font mt-5 text-center">
+                you must register or be signed in to view this page
+            </p>
+            <div class="body-font mt-5 d-flex justify-content-center">
+                <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
+                <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
+            </div>
+        </div>
+    </div>
+{% endif %}
 {% endblock %}

@@ -33,14 +33,15 @@
     </div>
 </div>
 {% else %}
-<!-- Displayed if no user is logged in -->
-<div class="container">
-    <div class="row align-items-center">
-        <div class="ms-4 mt-4">
-            <h3 class="mt-4 body-font">you do not have permission to view this page</h3><br>
-            <button class="btn btn-secondary btn-color rounded-0">
-                <a class="title-font text-decoration-none text-reset" href="{% url 'home' %}">RETURN</a>
-            </button>
+<!-- Display if user navigates to page and isn't logged in -->
+<div class="row">
+    <div class="col">
+        <p class="body-font mt-5 text-center">
+            you must register or be signed in to view this page
+        </p>
+        <div class="body-font mt-5 d-flex justify-content-center">
+            <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
+            <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
         </div>
     </div>
 </div>

@@ -30,124 +30,170 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md nav-color text-nowrap title-font nav-color-custom" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand title-font" href="{% url 'home' %}">
-                <img src="{% static 'images/tp-logo-dark.png' %}" id="nav-logo" alt="logo">
-            </a>
-            <button class="navbar-toggler burger-color rounded-0" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto">
+    {% if user.is_authenticated %}
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-md nav-color text-nowrap title-font nav-color-custom" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand title-font" href="{% url 'home' %}">
+                    <img src="{% static 'images/tp-logo-dark.png' %}" id="nav-logo" alt="logo">
+                </a>
+                <button class="navbar-toggler burger-color rounded-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto">
 
-                    <!-- Dynamic Category Menu -->
-                    {% if category_menu %}
-                    <li class="nav-item dropdown ms-2">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CATEGORIES
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {% for item in category_menu %}
-                            <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a>
-                            {% endfor %}
-                        </div>
-                    </li>
-                    {% else %}
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" href="{% url 'category-list' %}">
-                            CATEGORIES
-                        </a>
-                    </li>
-                    {% endif %}
-                    <!-- Nav links related to user authentication status -->
-                    {% if user.is_authenticated %}
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" href="{% url 'add-post' %}">ADD POST</a>
-                    </li>
-                    {% if user.is_staff %}
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" href="{% url 'add-category' %}">ADD CATEGORY</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">LOGOUT</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}">CREATE ACCOUNT</a>
-                    </li>
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">LOGIN</a>
-                    </li>
-                    {% endif %}
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" aria-current="page" href="{% url 'contact' %}">CONTACT US</a>
-                    </li>
-                </ul>
+                        <!-- Dynamic Category Menu -->
+                        {% if category_menu %}
+                        <li class="nav-item dropdown ms-2">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                CATEGORIES
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                {% for item in category_menu %}
+                                <a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a>
+                                {% endfor %}
+                            </div>
+                        </li>
+                        {% else %}
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="{% url 'category-list' %}">
+                                CATEGORIES
+                            </a>
+                        </li>
+                        {% endif %}
+                        <!-- Nav links related to user authentication status -->
+                        {% if user.is_authenticated %}
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="{% url 'add-post' %}">ADD POST</a>
+                        </li>
+                        {% if user.is_staff %}
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="{% url 'add-category' %}">ADD CATEGORY</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">LOGOUT</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" aria-current="page" href="{% url 'account_signup' %}">CREATE ACCOUNT</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">LOGIN</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" aria-current="page" href="{% url 'contact' %}">CONTACT US</a>
+                        </li>
+                    </ul>
 
-                <!-- Nav element for logged-in username displayed in navbar -->
-                <div class="body-font text-white">
-                    {{ user.username }}
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-    <!-- Div for alerts and messages -->
-    <div class="container-fluid col-md-8 offset-md-2" style="z-index: 1; position: absolute;">
-        {% for message in messages %}
-        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-            {{ message | safe }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        {% endfor %}
-    </div>
-
-    <!-- Main container div for content -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-10 p-0">
-                {% block content %}
-                {% endblock %}
-            </div>
-            <!-- Sticky sidebar to appear on the right-hand-side of all pages -->
-            <div class="col-2 mt-3 d-none d-md-block">
-                <div class="sticky-top mt-3" style="top: 0.5em;">
-                    <div class="d-flex flex-wrap flex-lg-nowrap justify-content-lg-center">
-                        <a href="https://facebook.com" target="_blank"
-                            class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
-                            <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
-                        </a>
-                        <a href="https://instagram.com" target="_blank"
-                            class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
-                            <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
-                        </a>
-                        <a href="https://github.com" target="_blank"
-                            class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
-                            <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
-                        </a>
-                        <a href="https://youtube.com" target="_blank"
-                            class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
-                            <i class="fa-brands fa-square-youtube fa-2xl"></i>
-                        </a>
-                        <a href="https://twitter.com" target="_blank"
-                            class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
-                            <i class="fa-brands fa-square-twitter fa-2xl"></i>
-                        </a>
+                    <!-- Nav element for logged-in username displayed in navbar -->
+                    <div class="body-font text-white">
+                        {{ user.username }}
                     </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Div for alerts and messages -->
+        <div class="container-fluid col-md-8 offset-md-2" style="z-index: 1; position: absolute;">
+            {% for message in messages %}
+            <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                {{ message | safe }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Main container div for content -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-md-10 p-0">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                <!-- Sticky sidebar to appear on the right-hand-side of all pages -->
+                <div class="col-2 mt-3 d-none d-md-block">
+                    <div class="sticky-top mt-3" style="top: 0.5em;">
+                        <div class="d-flex flex-wrap flex-lg-nowrap justify-content-lg-center">
+                            <a href="https://facebook.com" target="_blank"
+                                class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
+                                <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
+                            </a>
+                            <a href="https://instagram.com" target="_blank"
+                                class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
+                                <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
+                            </a>
+                            <a href="https://github.com" target="_blank"
+                                class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
+                                <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
+                            </a>
+                            <a href="https://youtube.com" target="_blank"
+                                class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
+                                <i class="fa-brands fa-square-youtube fa-2xl"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank"
+                                class="px-1 mt-lg-0 mt-2 text-decoration-none text-reset">
+                                <i class="fa-brands fa-square-twitter fa-2xl"></i>
+                            </a>
+                        </div>
+                        <hr>
+                        <p class="body-font">site created by
+                            <a href="https://www.nicholasjameswaldock.uk" target="_blank"
+                                class="text-decoration-none text-reset">
+                                nicholas james waldock</a>
+                            <br>
+                            <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i> march 2023
+                        </p>
+                        <p class="text-muted body-font mt-5">
+                            <small><em>-- this site is for demonstration purposes only</em></small>
+                        </p>
+                        <p class="body-font mt-5">
+                            have an idea to help improve the site?
+                            <a class="nav-link" aria-current="page" href="{% url 'contact' %}">drop us a message here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <!-- Footer to appear at the bottom of all pages on mobile view only -->
+        <footer class="container-fluid d-md-none">
+            <div class="row mt-5">
+                <div class="col mt-5">
                     <hr>
-                    <p class="body-font">site created by
+                    <a href="https://facebook.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <i class="fa-brands fa-square-youtube fa-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="px-1 text-decoration-none text-reset">
+                        <i class="fa-brands fa-square-twitter fa-2xl"></i>
+                    </a>
+                    <hr>
+                    <p class="body-font">
+                        site created by
                         <a href="https://www.nicholasjameswaldock.uk" target="_blank"
                             class="text-decoration-none text-reset">
-                            nicholas james waldock</a>
+                            nicholas james waldock
+                        </a>
                         <br>
-                        <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i> march 2023
+                        <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i>
+                        march 2023
                     </p>
                     <p class="text-muted body-font mt-5">
                         <small><em>-- this site is for demonstration purposes only</em></small>
@@ -158,50 +204,8 @@
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Footer to appear at the bottom of all pages on mobile view only -->
-    <footer class="container-fluid d-md-none">
-        <div class="row mt-5">
-            <div class="col mt-5">
-                <hr>
-                <a href="https://facebook.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                    <i class="fa-brands fa-square-facebook fa-2xl footer-icon"></i>
-                </a>
-                <a href="https://instagram.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                    <i class="fa-brands fa-square-instagram fa-2xl footer-icon"></i>
-                </a>
-                <a href="https://github.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                    <i class="fa-brands fa-square-github fa-2xl footer-icon"></i>
-                </a>
-                <a href="https://youtube.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                    <i class="fa-brands fa-square-youtube fa-2xl"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="px-1 text-decoration-none text-reset">
-                    <i class="fa-brands fa-square-twitter fa-2xl"></i>
-                </a>
-                <hr>
-                <p class="body-font">
-                    site created by
-                    <a href="https://www.nicholasjameswaldock.uk" target="_blank"
-                        class="text-decoration-none text-reset">
-                        nicholas james waldock
-                    </a>
-                    <br>
-                    <i class="fa-sharp fa-regular fa-copyright footer-icon fa-2xs"></i>
-                     march 2023
-                </p>
-                <p class="text-muted body-font mt-5">
-                    <small><em>-- this site is for demonstration purposes only</em></small>
-                </p>
-                <p class="body-font mt-5">
-                    have an idea to help improve the site?
-                    <a class="nav-link" aria-current="page" href="{% url 'contact' %}">drop us a message here</a>
-                </p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+        {% endif %}
 
     <!-- Bootstrap Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"

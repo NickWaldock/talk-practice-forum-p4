@@ -1,32 +1,35 @@
 {% extends 'base.html' %}
-{% block title %}Create a Topic Category...{% endblock %}
 
-{% block content %}
+{% block content %}  
 {% if user.is_staff %}
-<div class="container-fluid">
-    <div class="row ms-3">
-        <h3 class="title-font my-5">ADD CATEGORY...</h3>
-        <div class="form-group">
-            <form method="post" class="form-font">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-secondary mt-3 rounded-0 btn-color">add</button>
-            </form>
+    {% block title %}Create a Topic Category...{% endblock %}
+      
+    <div class="container-fluid">
+        <div class="row ms-3">
+            <h3 class="title-font my-5">ADD CATEGORY...</h3>
+            <div class="form-group">
+                <form method="post" class="form-font">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary mt-3 rounded-0 btn-color">add</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
-{% else %}
-<!-- Displayed if no user is logged in -->
-<div class="container">
-    <div class="row align-items-center">
-        <div class="ms-4 mt-4">
-            <h3 class="body-font">you do not have permission to view this page</h3><br>
-            <button class="btn btn-secondary rounded-0 btn-color">
-                <a class="body-font text-decoration-none text-reset" href="{% url 'home' %}">return</a>
-            </button>
+    {% else %}
+        <!-- Display if user navigates to page and isn't logged in -->
+        <div class="row">
+            <div class="col">
+                <p class="body-font mt-5 text-center">
+                    you must register or be signed in to view this page
+                </p>
+                <div class="body-font mt-5 d-flex justify-content-center">
+                    <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
+                    <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    
 {% endif %}
 {% endblock %}
+    

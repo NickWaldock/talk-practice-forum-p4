@@ -1,42 +1,58 @@
 {% extends 'base.html' %}
-{% block title %}Contact Us{% endblock %}
-{% block content %}
 
-<div class="container-fluid">
-    <div class="row m-4">
-        <h2 class="title-font">HAVE A SUGGESTION?</h2>
-        <p class="body-font mb-3">send a message to our team</p>
-        <div class="form-group">
-            <form method="post">
-                {% csrf_token %}
-                {{ form.name }}
-                <br><br>
-                {{ form.email }}
-                <br><br>
-                {{ form.subject }}
-                <br><br>
-                {{ form.message }}
-                <br><br>
-                <div class="row justify-content-center">
-                    <div class="col-4">
-                        <p class="body-font text-center fs-6">
-                            Are you a current member?
-                        </p>
+{% block content %}
+{% if user.is_authenticated %}
+    {% block title %}Contact Us{% endblock %}
+    
+    <div class="container-fluid">
+        <div class="row m-4">
+            <h2 class="title-font">HAVE A SUGGESTION?</h2>
+            <p class="body-font mb-3">send a message to our team</p>
+            <div class="form-group">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.name }}
+                    <br><br>
+                    {{ form.email }}
+                    <br><br>
+                    {{ form.subject }}
+                    <br><br>
+                    {{ form.message }}
+                    <br><br>
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <p class="body-font text-center fs-6">
+                                Are you a current member?
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="row justify-content-center mb-2">
-                    {{ form.member }}
-                </div>
-                <div class="row justify-content-center mt-2">
-                    <div class="col text-center p-0">
-                        <button class="btn btn-block btn-secondary mt-3 rounded-0 btn-color">
-                            send
-                        </button>
+                    <div class="row justify-content-center mb-2">
+                        {{ form.member }}
                     </div>
-                </div>
-            </form>
+                    <div class="row justify-content-center mt-2">
+                        <div class="col text-center p-0">
+                            <button class="btn btn-block btn-secondary mt-3 rounded-0 btn-color">
+                                send
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
+    
+{% else %}
+    <!-- Display if user navigates to page and isn't logged in -->
+    <div class="row">
+        <div class="col">
+            <p class="body-font mt-5 text-center">
+                you must register or be signed in to view this page
+            </p>
+            <div class="body-font mt-5 d-flex justify-content-center">
+                <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
+                <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
+            </div>
+        </div>
+    </div>
+{% endif %}
 {% endblock %}
