@@ -19,10 +19,10 @@
     background: #000000;
   
     /* Chrome 10-25, Safari 5.1-6 */
-    background: -webkit-linear-gradient(to right, rgba(0,0,0,1), rgba(51, 51, 51, 0.8));
+    background: -webkit-linear-gradient(to right, rgba(0,0,0,1), rgba(40, 40, 40, 0.8));
   
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(0,0,0,1), rgba(51, 51, 51, 0.8));
+    background: linear-gradient(to right, rgba(0,0,0,1), rgba(40, 40, 40, 0.8));
   }
 
 .burger-color {
@@ -37,7 +37,7 @@
 
 /* Buttons */
 .btn-color {
-    background-color: #303030;
+    background-color: #3b3b3b;
 }
 
 .btn:hover{

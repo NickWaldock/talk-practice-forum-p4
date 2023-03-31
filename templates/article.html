@@ -97,11 +97,11 @@
 
             <!-- Form to add comments -->
             {% if user.is_authenticated %}
-            <div class="form-group">
+            <div class="form-group form-font">
                 <form method="POST">
                     {% csrf_token %}
-                    {{ form.as_table }}
-                    <button class="btn btn-secondary rounded-0 mt-3 body-font">add comment</button>
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary btn-color rounded-0 body-font">add comment</button>
                 </form>
             </div>
             {% else %}
