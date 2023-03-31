@@ -27,6 +27,17 @@
 <body>
     
 <div class="container-fluid" style="height: 100vh;">
+    <!-- Div for alerts and messages -->
+    <div class="container-fluid col-md-8 offset-md-2" style="z-index: 1; position: absolute;">
+        {% for message in messages %}
+        <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Jumbotron -->
     <div class="row h-100 d-flex align-items-center">
         <div class="col d-none d-md-block"></div>
         <div class="col-md-8 col-12">
