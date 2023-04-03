@@ -211,6 +211,10 @@ The following are a few examples:
 - Save post as draft
 - Sidebar becomes footer in md and small screens
 - Reset password / forgotten password links
+- Search function
+- Tags
+- Rich text editor on front end, formatting the display of posts
+- In the contact form, remove the checkbox asking if user is a member and code to check for this automatically on submission
 
 <br />
 <br />
