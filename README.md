@@ -221,6 +221,7 @@ The following are a few examples:
 - Having the post card clickable to navigate to the post rather than just the title, but still able to click the author or category to navigate
 - Allow personal profiles page, to add, update user's public information
 - Post author's user profile's linked to relevant posts for public viewing
+- Full admin functionality to manage categories on the front-end
 
 <br />
 <br />

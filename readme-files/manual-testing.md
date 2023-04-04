@@ -74,7 +74,7 @@ Below is the account of all manual testing that has taken place on the project.
     <td>Clicking in-text link</td>
     <td>On click the user is taken to the contact form page</td>
     <td>PASS</td>
-    <td></td>
+    <td>Links are available on all pages, except the landing page</td>
   </tr>
   <tr>
     <td>Internal Links: List View -> Edit Post</td>
@@ -224,18 +224,71 @@ Below is the account of all manual testing that has taken place on the project.
     <td>PASS</td>
     <td>Page only available if user is author</td>
   </tr>
-
-
-
   <tr>
+    <td>Internal Links: Logout Page -> Logout Button</td>
+    <td>Click button</td>
+    <td>Clicking the button redirects the user to the Landing Page</td>
+    <td>PASS</td>
+    <td>A message is displayed for 2secs to confirm the user has logged out</td>
+  </tr>
+  <tr>
+    <td>Internal Links: Logout Page -> Read More Button</td>
+    <td>Click button</td>
+    <td>Clicking the button returns the user to the Home Post List View page</td>
+    <td>PASS</td>
     <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+  </tr>
+  <tr>
+    <td>Internal Links: Register Page -> Create Account Button</td>
+    <td>Click button</td>
+    <td>Clicking the button generates the new user account and redirects the user to the Home Post List View page</td>
+    <td>PASS</td>
+    <td>A message is displayed for 2 secs to confirm the user has logged in</td>
+  </tr>
+  <tr>
+    <td>Internal Links: Add Post Page -> Publish Button</td>
+    <td>Click button</td>
+    <td>Clicking the button submits the form and redirects the user to the Home Post List View</td>
+    <td>PASS</td>
+    <td>Form must be valid</td>
   </tr>
 
 
+  <tr>
+    <td>CRUD - Add Post</td>
+    <td>Using the frontend Add Post page to submit a new post</td>
+    <td>Adding content to the form and submitting creates a new post instance in the database. The post is visible on all relvant pages</td>
+    <td>PASS</td>
+    <td>Form must be valid. A "Post Created!" message is displayed for 2sec to confirm the post has been created</td>
+  </tr>
+  <tr>
+    <td>CRUD - Update Post</td>
+    <td>Using the frontend Update Post page to update an existing post</td>
+    <td>The page automatically renders the post content. Clicking the update button updates the post instance in the database</td>
+    <td>PASS</td>
+    <td>Form must be valid. A "Post Updated!" message is displayed for 2sec to confirm the post has been updated</td>
+  </tr>
+  <tr>
+    <td>CRUD - Delete Post</td>
+    <td>Using the frontend Update Post page delete and existing post</td>
+    <td>The page automatically renders the post content. Clicking the delete button directs the user to a delete confirmation page. Clicking delete permantly removes the instance of the post in the databse</td>
+    <td>PASS</td>
+    <td>A "Post Deleted!" message is displayed for 2sec to confirm the post has been deleted</td>
+  </tr>
+  <tr>
+    <td>CRUD - View Posts</td>
+    <td>Navigating the various Post List and Category List Views</td>
+    <td>The Home Post List View, Categories View, and Categories Post List View all display the post instances currently held in the databases. Any new instances, updates, or deletions are reflected immediatly in the list views  </td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>CRUD - Add Category</td>
+    <td>Submitting a new category on the add category page</td>
+    <td>On submission of a valid text-input the new cateogry is available in the navbar dropdown Categories menu, also renders in the Category List View as an active link to display any related posts</td>
+    <td>PASS</td>
+    <td>Only available to admin/staff users. A "Category Created!" message is displayed for 2sec to the user</td>
+  </tr>
 
 
 
@@ -249,14 +302,14 @@ Below is the account of all manual testing that has taken place on the project.
     <td>Clickable icons to navigate to relevant social page</td>
     <td>Icons navigate to the relevant social media page. Pages open in a new tab</td>
     <td>PASS</td>
-    <td></td>
+    <td>Icon links are available on every page except the landing page</td>
   </tr>
   <tr>
     <td>External Links: Sidebar/Footer Creator Link</td>
     <td>Site creator name links to professional website</td>
     <td>Text link navigates to relevnat site. Opens in a new tab</td>
     <td>PASS</td>
-    <td></td>
+    <td>Link is available on every page except the landing page</td>
   </tr>
 
 
