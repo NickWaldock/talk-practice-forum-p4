@@ -21,7 +21,6 @@ class Post(models.Model):
     updated_on = models.DateField(auto_now=True)
     body = models.TextField()
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
-    # featured_image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):
         return self.title
@@ -52,29 +51,6 @@ class Category(models.Model):
         return reverse('home')
 
 
-
-
-    # def get_absolute_url(self):
-    #     return reverse('category', kwargs={'slug': self.slug})
-
-    # def save(self, *args, **kwargs):
-    #     if not self.slug:
-    #         self.slug = slugify(self.name)
-    #     return super().save(*args, **kwargs)
-
-
-# class Category(models.Model):
-#     name = models.CharField(max_length=30)
-
-#     def __str__(self):
-#         return self.name
-
-#     def get_absolute_url(self):
-#         return reverse('home')
-
-
-
-
 # Database model for comments
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -94,7 +70,7 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.username}"
 
 
-# Model for storing contact information
+# Model for storing contact message information
 class Contact(models.Model):
     name = models.CharField(max_length=150)
     email = models.EmailField(max_length=100)

@@ -296,14 +296,6 @@ Below is the account of all manual testing that has taken place on the project.
     <td>PASS</td>
     <td>Only available to admin/staff users. A "Category Created!" message is displayed for 2sec to the user</td>
   </tr>
-
-
-
-
-
-
-
-
   <tr>
     <td>External Links: Sidebar/Footer Socials</td>
     <td>Clickable icons to navigate to relevant social page</td>
@@ -318,30 +310,6 @@ Below is the account of all manual testing that has taken place on the project.
     <td>PASS</td>
     <td>Link is available on every page except the landing page</td>
   </tr>
-
-
-
-
-
-
-
-
-  <tr>
-    <td>Django Messages</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Create Post</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  
-  
 </table>
 
 [<< Back to README](/README.md)

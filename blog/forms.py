@@ -15,8 +15,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'subtitle', 'category', 'author', 'body')
-
-        widgets = {  # For bootstrap form styling
+        widgets = {
             'title': forms.TextInput(
                 attrs={'class': 'form-field',
                        'placeholder': 'Write a concise title...'
@@ -52,7 +51,7 @@ class UpdateForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'subtitle', 'body')
-        widgets = {  
+        widgets = {
             'title': forms.TextInput(attrs={'class': 'form-field'}),
             'subtitle': forms.TextInput(attrs={'class': 'form-field'}),
             'body': forms.Textarea(attrs={'class': 'form-field'}),
@@ -104,4 +103,3 @@ class ContactForm(forms.ModelForm):
             'message': '',
             'member': ''
         }
-        

@@ -13,13 +13,12 @@ class Welcome(generic.TemplateView):
 
 
 # View to list all posts
-
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('-created_on')
     template_name = 'index.html'
 
-    # Context for the dynamic categories nav links
+    # Context for the dynamic categories menu nav links
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
         context = super(PostList, self).get_context_data(*args, **kwargs)
@@ -33,7 +32,7 @@ class PostView(generic.DetailView):
     template_name = 'article.html'
     form_class = CommentForm
 
-    # Context for the dynamic categories nav links, likes, and comments
+    # Context for the dynamic categories menu nav links, likes, and comments
     def get_context_data(self, *args, **kwargs):
         category_menu = Category.objects.all()
         context = super(PostView, self).get_context_data(*args, **kwargs)

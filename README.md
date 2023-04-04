@@ -263,7 +263,43 @@ Additional requirements used in this python project include:
 <br />
 
 # Testing
-## Pep8
+## Code Validation
+### Pep8
+<br>
+All custom python files in the 'blog' directory comply with pep8 standard formatting and show no errors or warnings.
+<br>
+Django produced python files (manage.py & settings.py) raise some minor formatting errors
+<br />
+<br />
+
+### HTML Validation
+<img src="readme-files/screenshots/reports-bugs/html-validation-report.png" width="30%">
+<br>
+- No warnings present
+<br>
+<br>
+
+### CSS Validation
+<img src="readme-files/screenshots/reports-bugs/css-validation-report.png" width="30%">
+<br>
+- 1 Warning is reported: *"-webkit-sticky is a vendor extension"*
+<br>
+<br>
+
+## Javascript Validation
+<img src="readme-files/screenshots/reports-bugs/javascript-validation-report.png" width="30%">
+<br>
+<br>
+
+### Lighthouse Report
+<img src="readme-files/screenshots/reports-bugs/lighthouse-report.png" width="30%">
+<br>
+Three detrimental messages occur in the lighthouse report, for Best Practices:
+<br>
+
+1. *"Includes front-end JavaScript libraries with known security vunerabilities: jQuery@3.2.1"*
+2. *"Browser errors were logged to the console"* This bug is detailed [below](#bugs).
+3. *"Issues were logged in the ISSUES panel in Chrome Dev Tools"* The only issue logged states: *"Audit usage of navigator.userAgent, navigator.appVersion, and navigator.platform"* A solution is proposed in the report which will be implemented in the next development cycle of the project.
 
 <br />
 <br />
@@ -273,6 +309,7 @@ Each function and validation has been manually tested. All testing logs can her 
 [>> Testing](/readme-files/manual-testing.md)
 <br />
 <br />
+
 
 ## Tools
 Tools used in the development of this project include:
@@ -284,9 +321,33 @@ Tools used in the development of this project include:
 <br />
 
 ## Bugs
+<table>
+<tr>
+<th>Description</th>
+<th>Status</th>
+</tr>
 
-- On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge - *SOLVED*
-- On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should. - *SOLVED*
+<tr>
+  <td>On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge</td>
+  <td>*SOLVED*</td>
+</tr>
+
+<tr>
+  <td>On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should</td>
+  <td>*SOLVED*</td>
+</tr>
+<tr>
+  <td>
+  <img src="readme-files/screenshots/reports-bugs/bug.png" width="30%"><br>
+In the Dev Tools console the above error appears. This relates to the Javascript that accounts for the display timeout django messages that appear when a user interacts with any of the forms on the site. This usually appears on a hard refresh of the site and dissapears once a form has been submitted and a  subsequent message has been displayed</td>
+  <td>Unsolved</td>
+</tr>
+</table>
+
+<hr>
+
+<br>
+<br>
 
 ### 1. Messages 
 <img src="" width="70%">

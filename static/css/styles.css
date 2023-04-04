@@ -13,7 +13,6 @@
     width: 10rem;
 }
 
-
 .nav-color-custom {
     background: #000000;
   }
@@ -22,9 +21,16 @@
     background-color:rgb(234, 234, 234);
 }
 
-/* Footer Icons */
+
+/* Sidebar / Footer */
 .footer-icon {
     color: #303030;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
 
@@ -36,6 +42,7 @@
 .btn:hover{
     transform: scale(1.05);
 }
+
 
 /* Card Hover Effects */
 .card:hover{
@@ -60,6 +67,7 @@
     font-family: 'Source Code Pro', monospace;
 }
 
+
 /* Hide Form Labels */
 label[for=id_name],
 label[for=id_email],
@@ -69,10 +77,4 @@ label[for=id_password1],
 label[for=id_password2],
 label[for=id_login] {
     display: none;
-}
-
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
 }
