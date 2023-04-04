@@ -196,6 +196,52 @@ Below is the account of all manual testing that has taken place on the project.
     <td>PASS</td>
     <td>Only available if the user is the author of the post</td>
   </tr>
+  <tr>
+    <td>Internal Links: Update Post -> Update Button</td>
+    <td>Click Update Button</td>
+    <td>Clicking button submits the updated form and returns the user to the Home Post List View</td>
+    <td>PASS</td>
+    <td>Page only available if user is author</td>
+  </tr>
+  <tr>
+    <td>Internal Links: Update Post -> Delete Button</td>
+    <td>Click Delete Button</td>
+    <td>Clicking button directs user to the Delete Post page</td>
+    <td>PASS</td>
+    <td>Page only available if user is author</td>
+  </tr>
+  <tr>
+    <td>Internal Links: Delete Page -> Delete Button</td>
+    <td>Click Delete Button</td>
+    <td>Clicking button deletes the relevant post and returns the user to the Home Post List View</td>
+    <td>PASS</td>
+    <td>Page only available if user is author. Message is displayed to confirm deletion</td>
+  </tr>
+  <tr>
+    <td>Internal Links: Delete Page -> Return Button</td>
+    <td>Click Return Button</td>
+    <td>Clicking button returns the user to the Home Post List View</td>
+    <td>PASS</td>
+    <td>Page only available if user is author</td>
+  </tr>
+
+
+
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+
+
+
+
+
+
+
 
 
   <tr>
