@@ -277,7 +277,9 @@ Tools used in the development of this project include:
 <br />
 
 ## Bugs
-The only major bugs that occured in the development of this project include:
+
+- On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge 
+- On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should.
 
 ### 1. Messages 
 <img src="" width="70%">
