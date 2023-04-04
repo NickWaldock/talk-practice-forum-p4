@@ -1,5 +1,5 @@
 # Talk Practice Forum
-<img src="readme-imgs/titles.png" width="50%">
+<img src="readme-files/screenshots/site/landing-page.png" width="100%">
 <br/>
 
 [View the live site here](https://talk-practice-forum-p4.herokuapp.com/)
@@ -46,8 +46,9 @@
 <br>
 <br>
 
+# Project Planning
 ## Aims
-- 
+- Multi-user environment
 - The project should utilise a full-stack framework with relevant technologies and be deployed via [Heroku](https://signup.heroku.com/)
 - 
 - 
@@ -58,30 +59,220 @@
 <br />
 <br />
 
-## Agile Methodology
+## Milestones
+[Milestones](https://github.com/NickWaldock/talk-practice-forum-p4/milestones)
+<br />
+<br />
+<hr>
 
-## User Stories
-### Milestones
-As a new user, I want to:
-- 
-- 
-As a new registered user, I want to:
-- 
-- 
-As admin, I want to:
-- 
--
+### Epics
+The main features required for this project were collated into Epics and for later distillation into [User Stories](#user-stories).
+<table>
+<tr><th>Epic</th><th>Details</th></tr>
+
+<tr>
+<td>Register</td>
+<td>To satisfy the aim of having a multi-user environment users are required to register for an account in order to gain access to the content. Users are to be managed through the Django Admin panel. A confirmation message is displayed upon succesful login after account creation</td>
+</tr>
+
+<tr>
+<td>Login & Logout</td>
+<td>Users are only able to access and interact with the main content of the site if they are logged in and authenticated. For security they are also able to logout of the site at will. Certain pages will be made available depending on the status of the user as either a general user or staff/admin. A confirmation message is displayed upon succesful login and log out</td>
+</tr>
+
+<tr>
+<td>Admin</td>
+<td>Users who admins have given 'staff' access are able to view all areas of the site, manage posts, comments, likes, categories, and other users</td>
+</tr>
+
+<tr>
+<td>View Posts</td>
+<td>Authenticated users are able to view the current posts instances available in the database in a general list and also in a list specific to the category or tags. They are also able to view a single post in a detail view. A confirmation message is displayed upon succesful form submission</td>
+</tr>
+
+<tr>
+<td>Create Post</td>
+<td>Authenticated users are able to create new posts under their username authorship. The new post will contain a title, subtitle, category, and body. The post will be date stamped on submission and available immediately to other users. A confirmation message is displayed upon succesful form submission</td>
+</tr>
+
+<tr>
+<td>Edit Post</td>
+<td>Authenticated users who are the authors of a post are able to edit the fields in a pre-existing post therby updating the instance in the database. When editing, the current post content will automatically be populated on the page. Users will also be given the option to delete the post and permanently remove the database instance. A confirmation message is displayed upon succesful form submission</td>
+</tr>
+
+<tr>
+<td>Delete Post</td>
+<td>Authenticated users who are the authors of a post are able to fully and permanently delete a post from the database through the Edit page. Users are given a confirmation page and a choice to return or continue and delete the post. A confirmation message is displayed upon succesful deletion</td>
+</tr>
+
+<tr>
+<td>UX</td>
+<td>Design features to make the user experience (UX) ergonomically and aesthetically pleasing, as well as simple and intuitive to navigate</td>
+</tr>
+</table>
+
+
 <br />
 <br />
+<hr>
+
+### User Stories
+As a non-registered new user, I want to be able to:
+- Be greeted by a landing page when I first come to the site
+- Register for an account with username, optional email, and password
+- Navigate to the content immediately on the creation of my account
+- Easily navigate the site on my first visist
+- See confirmation I have logged in successfully
+- Create, and edit my personal profile
+- See the page title reflected in the browser tab
+
+<br>
+
+As a registered user, I want to be able to:
+- Login using my social media or google account
+- Login and out of the site safely
+- See confirmation I have logged in or out successfully
+
+<br>
+
+As a registered and logged in user, I want to be able to:
+- See I am logged in on all pages on the site
+- View a condensed list of all the forum posts
+- View a condensed list of all the forum posts related to a certain category
+- View posts related to tags, and view and search tags easily
+- Navigate to a full-page view of the post I clicked on in the list views
+- Easily navigate from a full-page article view to the post list view
+- Navigate to a page to create a new post
+- See a confirmation message that my new post has been submitted successfully
+- See confirmation messages when my post has been updated or deleted
+- See a confirmation message when I send a message through the contact form
+- Submit my new post without having to input my own username as the author
+- Navigate to a contact page and send a message to the site owner
+- Update the title, subtitle, or body of my post
+- Add or update the category from the category list on my post
+- Have adequate space on the screen to compose my post
+- Upload media (photos, pdfs, video, audio) alongside my post
+- Only myself to have permission to edit and update my posts
+- Delete my existing posts
+- Only myself to be able to delete my posts
+- See an 'Are you sure?' message in case I accidentally click the delete button
+- See how many likes a post has, and like or unlike it
+- Comment on other user's posts
+- See social links and site information on all pages
+- View the site clearly on any device
+
+<br>
+
+As an admin, I want to be able to:
+- Create, read, update, and delete posts, or otherwise manage posts in the admin panel
+- View and manage all users in the admin panel
+- Create new post categories in the front-end
+- Approve comments in the admin panel
+
+<br />
+<br />
+<hr>
+
+## Wireframes
+<table>
+<tr>
+<td><img src="readme-files/wireframes/landing-page.png" width="100%"></td>
+<td>The landing page seeks to establish the clean, simple, and refined design apprach that is utilised througout the site. With a clear logo, concise information on the site's purpose, and a call to action to either login or register</td>
+</tr>
+
+<tr>
+<td>The login, register, and log out pages essentially follow the same simple design and display the fields required with placeholder text and clearly demarcated buttons</td>
+<td><img src="readme-files/wireframes/login-register.png" width="50%" align="right"></td>
+</tr>
+
+
+<tr>
+<td><img src="readme-files/wireframes/article-list.png" width="2500px"></td>
+<td>The main post list view details all the current posts on the site as cards. Design uses simple contrasting black and white, boxes with non-rounded corners and small simple borders. Users can scroll through the content and click through to a full page view. The navbar at the top allows site-wide navigation and contains a dropdown menu for all the possible post categories. The sidebar becomes a feature on all pages and scrolls with the viewer, always eing in view. The sidebar is removed on mobiles and becomes a footer at the bottom of the content</td>
+</tr>
+
+<tr>
+<td>The full page article view provides all the information the user needs: title, subtitle, author, date posted, relevant category, and number of likes. The page renders on a tablet as it would on a desktop and a condensed version is applied for mobile viewing</td>
+<td><img src="readme-files/wireframes/article-view.png" width="90%" align="right"></td>
+</tr>
+
+<tr>
+<td><img src="readme-files/wireframes/add-post.png" width="80%"></td>
+<td>The add post page is to be simple and concise with space for a title, subtitle, and body. Form fields do not have labels in order to keep with the simplicity of design. Placeholder text informs the user what informatin should be placed there. The chevron in the category menu is important to indicate to the user a dropdown choice menu</td>
+</tr>
+
+<tr>
+<td>The update post page is similar in design to the add post page with the addition of the update and delete buttons. *Post content here would need to be auto-populated</td>
+<td><img src="readme-files/wireframes/update-post.png" width="90%" align="right"></td>
+</tr>
+
+<tr>
+<td><img src="readme-files/wireframes/categories-list.png" width="110%"></td>
+<td>When the categories dropdown menu isn't available, as on form pages, the navbar link for categories links to a dedicated page and clealy displays the general categories that a user can browse through. The design of the links is similar to that of the cards in the list views</td>
+</tr>
+
+<tr>
+<td>Finally, the contact page follows pre-exisiting design elements as on other pages, with a simple form without labels, and placeholder text to prompt the user for content</td>
+<td><img src="readme-files/wireframes/contact-page.png" width="90%" align="right"></td>
+</tr>
+</table>
+
+<br />
+<br />
+<hr>
+
+## Database Design
+<img src="readme-files/wireframes/database.png" width="45%">
+<br>
+The database 
+<br />
+<br />
+<hr>
+
+
+## Agile Methodology
+[Project Kanban Board](https://github.com/users/NickWaldock/projects/5)
+<br>
+The following images represent evidence for an [Agile Methodology](https://agilemanifesto.org/) in the development of this project. 
+
+<table>
+<tr>
+<td><img src="readme-files/screenshots/agile/1.png" width="100%"></td>
+<td><img src="readme-files/screenshots/agile/2.png" width="100%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/agile/3.png" width="100%"></td>
+<td><img src="readme-files/screenshots/agile/4.png" width="100%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/agile/5.png" width="100%"></td>
+<td><img src="readme-files/screenshots/agile/6.png" width="100%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/agile/7.png" width="100%"></td>
+<td><img src="readme-files/screenshots/agile/8.png" width="100%"></td>
+</tr>
+</table>
+<hr>
+<br>
+
+[Epics](#epics) (or features) were distilled into [User Stories](#user-stories) and managed through the use of [Github Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects). [User Stories](#user-stories) were created as issues in the main github project repository with conecting [Milestones](#milestones) and [Epics](#epics). Additional items in the project were added to the backlog during the development. The [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) prioritisation method was also utilies to inform workflow and categorise user stories into *'Must Have', 'Should Have', 'Could Have',* and *'Won't Have'*
+<br>
+
+<table>
+<tr>
+<td><img src="readme-files/screenshots/agile/list-1.png" width="100%"></td>
+<td><img src="readme-files/screenshots/agile/list-2.png" width="100%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/agile/list-3.png" width="100%"></td>
+<td><img src="readme-files/screenshots/agile/list-4.png" width="100%"></td>
+</tr>
+</table>
+<hr>
+
 
 # Main Features
-## Wireframes
-
-
-<img src="" width="45%">
-<br />
-<br />
-
 ## UX Desgin
 ### Typography
 <br />
@@ -215,7 +406,7 @@ The following are a few examples:
 - Sidebar becomes footer in md and small screens
 - Reset password / forgotten password links
 - Search function
-- Tags
+- Allow the user to add Tags to a post and search other posts for relevant tags. Add a tag cloud to the sidebar for easy navigation
 - Rich text editor on front end, formatting the display of posts
 - In the contact form, remove the checkbox asking if user is a member and code to check for this automatically on submission
 - Having the post card clickable to navigate to the post rather than just the title, but still able to click the author or category to navigate
@@ -225,6 +416,8 @@ The following are a few examples:
 - A message to display when navigating to a category with no active posts
 - Post pagination
 - Fixed footer for mobiles - currently the user must scroll to the end of the post list to view the footer on the Home Post List View
+- Add a report button for users to report inappropriate posts or comments
+- Allow a user to view and manage all their own authored posts
 
 <br />
 <br />
