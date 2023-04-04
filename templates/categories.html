@@ -29,7 +29,11 @@
             </p>
               {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
-                <small><a href="{% url 'update-post' post.pk %}">edit</a></small>
+                
+                  <button class="btn btn-secondary btn-color rounded-0 body-font btn-block mt-3">
+                      <a class="text-reset text-decoration-none" href="{% url 'update-post' post.pk %}">edit</a>
+                  </button>
+              
                 {% endif %}
               {% endif %}
             </div>

@@ -218,6 +218,9 @@ The following are a few examples:
 - Tags
 - Rich text editor on front end, formatting the display of posts
 - In the contact form, remove the checkbox asking if user is a member and code to check for this automatically on submission
+- Having the post card clickable to navigate to the post rather than just the title, but still able to click the author or category to navigate
+- Allow personal profiles page, to add, update user's public information
+- Post author's user profile's linked to relevant posts for public viewing
 
 <br />
 <br />
@@ -278,8 +281,8 @@ Tools used in the development of this project include:
 
 ## Bugs
 
-- On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge 
-- On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should.
+- On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge - *SOLVED*
+- On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should. - *SOLVED*
 
 ### 1. Messages 
 <img src="" width="70%">
