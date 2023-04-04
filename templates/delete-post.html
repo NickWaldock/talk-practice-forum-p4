@@ -1,12 +1,9 @@
 {% extends 'base.html' %}
-
 {% block title %}DELETE POST!{% endblock %}
 
 {% block content %}
-
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
-    
     <div class="container-fluid">
         <div class="row ms-3">
             <h3 class="title-font my-5">DELETE POST?</h3>
@@ -30,7 +27,6 @@
         </div>
     </div>
     {% else %}
-
     <!-- Display if user navigates to page and isn't logged in -->
     <div class="row">
         <div class="col">
@@ -57,5 +53,4 @@
     </div>
 </div>
 {% endif %}
-
 {% endblock %}

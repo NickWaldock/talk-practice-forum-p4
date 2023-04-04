@@ -13,11 +13,11 @@ Below is the account of all manual testing that has taken place on the project.
     <th>Notes</th>
   </tr>
   <tr>
-    <td>Start</td>
+    <td>Landing Page Responsiveness</td>
     <td>n/a</td>
-    <td>Load Titles and Main Menu</td>
     <td></td>
-    <td>result</td>
+    <td></td>
+    <td></td>
   </tr>
   
 </table>

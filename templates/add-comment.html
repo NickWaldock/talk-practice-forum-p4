@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
+{% block title %}Add a comment...{% endblock %}
 
 {% if user.is_authenticated %}
-    {% block title %}Add a comment...{% endblock %}
-
     <h1>ADD COMMENT...</h1>
     <div class="form-group">
         <form method="POST">

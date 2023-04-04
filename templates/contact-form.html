@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
+{% block title %}Contact Us{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-    {% block title %}Contact Us{% endblock %}
-    
     <div class="container-fluid">
         <div class="row m-4">
             <h2 class="title-font">HAVE A SUGGESTION?</h2>
@@ -40,7 +39,6 @@
             </div>
         </div>
     </div>
-    
 {% else %}
     <!-- Display if user navigates to page and isn't logged in -->
     <div class="row">

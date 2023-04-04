@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-    {% block title %}{{ post.title }}{% endblock %}
+    
     
     <div class="container-fluid mb-5">
         <div class="row">
