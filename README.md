@@ -58,7 +58,10 @@
 <br />
 <br />
 
+## Agile Methodology
+
 ## User Stories
+### Milestones
 As a new user, I want to:
 - 
 - 
