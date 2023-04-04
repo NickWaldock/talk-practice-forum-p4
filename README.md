@@ -222,6 +222,9 @@ The following are a few examples:
 - Allow personal profiles page, to add, update user's public information
 - Post author's user profile's linked to relevant posts for public viewing
 - Full admin functionality to manage categories on the front-end
+- A message to display when navigating to a category with no active posts
+- Post pagination
+- Fixed footer for mobiles - currently the user must scroll to the end of the post list to view the footer on the Home Post List View
 
 <br />
 <br />

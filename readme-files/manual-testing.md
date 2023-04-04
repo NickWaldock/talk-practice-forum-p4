@@ -35,6 +35,13 @@ Below is the account of all manual testing that has taken place on the project.
     <td></td>
   </tr>
   <tr>
+    <td>Site Responsiveness - Sibebar/Footer</td>
+    <td>Checking the position of the Sidebar/Footer on smaller screens</td>
+    <td>On >Medium size screens the Sibebar is visiable on the right-hand side of the screen. On smaller devices it moves to the bottom</td>
+    <td>PASS</td>
+    <td>Future development: A fixed footer or post pagination solution will be needed for mobiles as the number of posts grows, in order to stop it being only visible with excess scrolling</td>
+  </tr>
+  <tr>
     <td>Internal Links: Landing Page -> Login Button</td>
     <td>Navigate to the login page</td>
     <td>On click with login button the login page is rendered</td>
