@@ -2,9 +2,7 @@
 {% block title %}Create a Topic Category...{% endblock %}
 
 {% block content %}  
-{% if user.is_staff %}
-    
-      
+{% if user.is_staff %} 
     <div class="container-fluid">
         <div class="row ms-3">
             <h3 class="title-font my-5">ADD CATEGORY...</h3>
@@ -30,7 +28,6 @@
                 </div>
             </div>
         </div>
-    
 {% endif %}
 {% endblock %}
     

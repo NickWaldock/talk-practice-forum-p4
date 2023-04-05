@@ -310,6 +310,82 @@ Below is the account of all manual testing that has taken place on the project.
     <td>PASS</td>
     <td>Link is available on every page except the landing page</td>
   </tr>
+  <tr>
+    <td>Manual URL Navigation: 'home'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Forum data should not display. Lack of permissions message and redirection to display instead</td>
+    <td>**FAIL**</td>
+    <td>Can navigate to index and view lists of posts. Navbar hidden.</td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'add-post'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and login/register to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'add-category'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register. Only staff/admin can access</td>
+    <td>Data should not display. Lack of permissions message and login/register to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'article/#'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and login/register to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'article/update/#'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and login/register to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'article/delete/#'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and redirection to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'contact'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should display. Contact form renders as normal</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+
+<tr>
+    <td>Manual URL Navigation: 'article/delete/#'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and redirection to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'category/#'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and login/register to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Manual URL Navigation: 'category-list/'</td>
+    <td>User attempts to access page directly via the url, bypassing login/register</td>
+    <td>Data should not display. Lack of permissions message and login/register to display instead</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+
+
+
+
+
 </table>
 
 [<< Back to README](/README.md)

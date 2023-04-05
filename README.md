@@ -343,7 +343,7 @@ The [Bootstrap V5.3](https://getbootstrap.com/) frame work was used extensively 
 <td><img src="readme-files/wireframes/database.png" width="100%"></td>
 <td>
 
-*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*<br> 
+*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*<br><br> 
 The database schema was designed with a typical forum structure in mind and allows the capture and storage of typical forum post data. The database is hosted by [ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data.
 </td>
 </tr>
@@ -599,6 +599,11 @@ Tools used in the development of this project include:
 In the Dev Tools console the above error appears. This relates to the Javascript that accounts for the display timeout django messages that appear when a user interacts with any of the forms on the site. This usually appears on a hard refresh of the site and dissapears once a form has been submitted and a  subsequent message has been displayed</td>
   <td>Unsolved</td>
 </tr>
+<tr>
+<td>The contact page cannot be reached if not logged in. This goes against the original purpose of the contact page to be available for non-users to send enquiries, particularly as the form allows for the confirmation of member status. Either the form and model will require the member status checkbox to be removed and only registered users generally allowed to send a contact form, or the page will need to be reorganised in its relationship to the base template file in order for it to be availabel to non users.</td>
+</tr>
+
+
 </table>
 
 <hr>

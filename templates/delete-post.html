@@ -27,15 +27,16 @@
         </div>
     </div>
     {% else %}
-    <!-- Display if user navigates to page and isn't logged in -->
+    <!-- Display if the wrong user navigates to the page -->
     <div class="row">
         <div class="col">
             <p class="body-font mt-5 text-center">
-                you must register or be signed in to view this page
+                you must be the author of the post in order to access this page
             </p>
             <div class="body-font mt-5 d-flex justify-content-center">
-                <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
-                <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
+                <button class="btn btn-secondary rounded-0">
+                    <a class="body-font text-decoration-none text-reset" href="{% url 'home' %}">return</a>
+                </button>
             </div>
         </div>
     </div>

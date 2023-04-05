@@ -6,6 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-4">
             <h3 class="title-font mt-5">SELECT A CATEGORY...</h3>
+            
             <!-- Display all categories currently in the dynamic list -->
             {% for item in category_menu_list %}
                 <a class="body-font pl-4 text-decoration-none text-reset" href="{% url 'category' item %}">
