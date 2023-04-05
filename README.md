@@ -203,7 +203,7 @@ As an admin, I want to be able to:
 
 <tr>
 <td>The update post page is similar in design to the add post page with the addition of the update and delete buttons. *Post content here would need to be auto-populated</td>
-<td><img src="readme-files/wireframes/update-post.png" width="90%" align="right"></td>
+<td><img src="readme-files/wireframes/update-post.png" width="80%" align="right"></td>
 </tr>
 
 <tr>
@@ -270,25 +270,89 @@ The following images represent evidence for an [Agile Methodology](https://agile
 </tr>
 </table>
 <hr>
-
+<br>
+<br>
 
 # Main Features
 ## UX Desgin
 ### Typography
+[Google Fonts](https://fonts.google.com/) supplied the two main fonts used in the site typography design.
+<br>
+<br>
+
+<table>
+<tr>
+<td><img src="readme-files/screenshots/site/source-code-font.png" width="50%"></td>
+<td>Source Code Pro was used for titles and navigation and mostly in with full capitalisation. Weights of SemiBold 600 and Extra Light 200</td>
+</tr>
+
+<tr>
+<td>Oxygen Mono was used for regular body, parapragph and button text. It is almost exlcusively used in lowercase format and with a weight of Regular 400</td>
+<td><img src="readme-files/screenshots/site/oxygen-mono-font.png" width="60%"></td>
+</tr>
+</table>
+
 <br />
+<br />
+<hr>
 
 ### Colour
-<br />
+The site's simplistic and elegant black & white frame design didn't intend to use much color. Only in adding additional highlights to important buttons. 
+The following grey only colour added to the custom css and is used for buttons and social media icons
+<br>
+<img src="readme-files/screenshots/site/button-color.png" width="10%">
+<br>
+
+Additional colours for main action buttons were provided by standard [Bootstrap button classes](https://getbootstrap.com/docs/4.0/components/buttons/)
+
+<table>
+<tr>
+<th>Button</th>
+<th>Color / Class</th>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/like-button.png" width="90%"></td>
+<td>Bootstrap 'Primary'</td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/unlike-button.png" width="100%"></td>
+<td>Bootstrap 'Danger'</td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/delete-button.png" width="100%"></td>
+<td>Bootstrap 'Danger'</td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/update-button.png" width="100%"></td>
+<td>Bootstrap 'Secondary' + #3b3b3b</td>
+</tr>
+</table>
+<hr>
+<br>
+<br>
 
 ### Bootstrap
+The [Bootstrap V5.3](https://getbootstrap.com/) frame work was used extensively in the formatting of this site. It's built in [grid/row](https://getbootstrap.com/docs/5.3/layout/grid/), and [cards]()https://getbootstrap.com/docs/5.3/components/card/#about system allowed for the execution of the simple wireframe design. Additional Bootstrap classes were used for custom spacing of elements on the page when required
+<hr>
 <br />
 <br />
 
 ## Database
-<img src="" width="100%">
-<br />
-This flowcart was created using [Lucid Chart](https://www.lucidchart.com/). The database is hosted by 
-[ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data
+<table>
+<tr>
+<td><img src="readme-files/wireframes/database.png" width="100%"></td>
+<td>
+
+*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*<br> 
+The database schema was designed with a typical forum structure in mind and allows the capture and storage of typical forum post data. The database is hosted by [ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data.
+</td>
+</tr>
+<tr>
+<td>The post model captures typical forum post data such as: title, subtitle, unique slug, author, date added and updated, body, likes, and a unique primary key which is generated with post creation. This model includes the additional field of 'category' to relate to the category model and allow rendering of the dynamic category menu and view pages. Future developments of this database may include media, file upload, and tag fields.</td>
+<td>The comments model allows users to comment on posts created by themselves or other users. Comments are saved to the model and displayed alongside the post model data when rendered in the templates.
+Finally, the contact model collects user data as a contact form and stores that data to be viewed by the admin in the django admin panel.</td>
+</tr>
+</table>
 <br />
 <br />
 
