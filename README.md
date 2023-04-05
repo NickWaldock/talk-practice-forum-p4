@@ -43,33 +43,50 @@
 
 # Introduction
 
+This project forms the 4th submission for my participation in [Code Institute's](https://codeinstitute.net) Full Stack Software Developer Diploma. The inspiration for the project comes as a continuation from my previous Python-based project [*Nick's Practice Log*](https://github.com/NickWaldock/practice-log), a chat-based CLI program designed to log the details of a musician's practice routine. The *Talk Practice* project is designed as a forum site for musicians to discuss musical practice. Many music forums exist on all manner of musical topics, manily around the subject of equipment, but there are very few that exist that center around the topic of musical practice. It is this gap that the *Talk Practice* project will attempt to fill.
+<br>
+<hr>
 <br>
 <br>
 
 # Project Planning
 ## Aims
-- Multi-user environment
-- The project should utilise a full-stack framework with relevant technologies and be deployed via [Heroku](https://signup.heroku.com/)
-- 
-- 
-- 
-- 
-- 
-- 
-<br />
+1. **Site Owner's Aims**
+  - Create a multi-user environment platform that acts as a dedicated musician's practice forum allowing users to share and discuss musical practice and development ideas
+<br>
+
+2. **User's Goal**
+  - To have a dedicated and bespoke space to find, share, discuss, and comment on information that may be useful in their individual musical practice journey
+
+3. **Additional Aims**
+  - Utilise [Django](https://www.djangoproject.com/) as the main MVC technology for rendering the database information
+  - Utilise a relational database schema to store data
+  - Have full CRUD functionality, commenting, likes, and category filters
+  - Use an [Agile](https://en.wikipedia.org/wiki/Agile_software_development) planning and development methodology
+  - Include user authorisation and permissions
+  - The project should utilise a full-stack framework with relevant technologies and be deployed via [Heroku](https://signup.heroku.com/)
+<hr>
 <br />
 
 ## Milestones
-[Milestones](https://github.com/NickWaldock/talk-practice-forum-p4/milestones)
+The project [Milestones](https://github.com/NickWaldock/talk-practice-forum-p4/milestones) were developed as part of the Agile methodology and in conjuction with the aims of the project.
+<br> 
+These include:
+- 'User Experience Design' - for general site aesthetics;
+- 'CRUD' functionality - for manipluating data on the front-end (Create, Read, Update, & Delete); 
+- 'User Authentication' - so users can only access relevant and appropriate parts of the site;
+- 'Login & Logout' - safe and secure login and logout protocols;
+- 'Create Account' - allow new users to join the forum; 
+- 'Admin' - allow site administrators to manage users and data;
+- 'Interaction' - allow users to interact with other user's data in the form of comments and likes
 <br />
 <br />
-<hr>
 
-### Epics
-The main features required for this project were collated into Epics and for later distillation into [User Stories](#user-stories).
+## Epics
+The main features required for this project were collated into Epics and incorporated general functionality for certain features and reflecting the project milestones
+<br>
 <table>
 <tr><th>Epic</th><th>Details</th></tr>
-
 <tr>
 <td>Register</td>
 <td>To satisfy the aim of having a multi-user environment users are required to register for an account in order to gain access to the content. Users are to be managed through the Django Admin panel. A confirmation message is displayed upon succesful login after account creation</td>
@@ -110,13 +127,13 @@ The main features required for this project were collated into Epics and for lat
 <td>Design features to make the user experience (UX) ergonomically and aesthetically pleasing, as well as simple and intuitive to navigate</td>
 </tr>
 </table>
-
-
-<br />
-<br />
 <hr>
+<br />
+<br />
 
-### User Stories
+## User Stories
+User stories were then formulated to further direct the development efforts. User stories were then inputed into [Github Projects](https://github.com/users/NickWaldock/projects/5) for distribution and prioritisation using the [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) method. Screenshots of the project kanban board and userstories is available [here](#agile-methodology)
+
 As a non-registered new user, I want to be able to:
 - Be greeted by a landing page when I first come to the site
 - Register for an account with username, optional email, and password
@@ -174,6 +191,8 @@ As an admin, I want to be able to:
 <hr>
 
 ## Wireframes
+Wireframe designs were mocked up to visualise the basic design of the site in-line with the user stories and allowed a visual guide for development
+<br>
 <table>
 <tr>
 <td><img src="readme-files/wireframes/landing-page.png" width="100%"></td>
@@ -197,7 +216,7 @@ As an admin, I want to be able to:
 </tr>
 
 <tr>
-<td><img src="readme-files/wireframes/add-post.png" width="80%"></td>
+<td><img src="readme-files/wireframes/add-post.png" width="100%"></td>
 <td>The add post page is to be simple and concise with space for a title, subtitle, and body. Form fields do not have labels in order to keep with the simplicity of design. Placeholder text informs the user what informatin should be placed there. The chevron in the category menu is important to indicate to the user a dropdown choice menu</td>
 </tr>
 
@@ -221,20 +240,30 @@ As an admin, I want to be able to:
 <br />
 <hr>
 
-## Database Design
-<img src="readme-files/wireframes/database.png" width="45%">
-<br>
-The database 
+## Database
+<table>
+<tr>
+<td><img src="readme-files/wireframes/database.png" width="100%"></td>
+<td>
+
+*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*<br><br> 
+The database schema was designed with a typical forum structure in mind and allows the capture and storage of typical forum post data. The database is hosted by [ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data.
+</td>
+</tr>
+<tr>
+<td>The post model captures typical forum post data such as: title, subtitle, unique slug, author, date added and updated, body, likes, and a unique primary key which is generated with post creation. This model includes the additional field of 'category' to relate to the category model and allow rendering of the dynamic category menu and view pages. Future developments of this database may include media, file upload, and tag fields.</td>
+<td>The comments model allows users to comment on posts created by themselves or other users. Comments are saved to the model and displayed alongside the post model data when rendered in the templates.
+Finally, the contact model collects user data as a contact form and stores that data to be viewed by the admin in the django admin panel.</td>
+</tr>
+</table>
 <br />
 <br />
-<hr>
 
 
 ## Agile Methodology
 [Project Kanban Board](https://github.com/users/NickWaldock/projects/5)
 <br>
-The following images represent evidence for an [Agile Methodology](https://agilemanifesto.org/) in the development of this project. 
-
+The following images represent evidence for an [Agile Methodology](https://agilemanifesto.org/) in the development of this project. Once user stories were developed and inputted they become part of the project backlog and managed in this [Kanban project tool]((https://github.com/users/NickWaldock/projects/5)).
 <table>
 <tr>
 <td><img src="readme-files/screenshots/agile/1.png" width="100%"></td>
@@ -282,19 +311,18 @@ The following images represent evidence for an [Agile Methodology](https://agile
 
 <table>
 <tr>
-<td><img src="readme-files/screenshots/site/source-code-font.png" width="50%"></td>
+<td><img src="readme-files/screenshots/site/source-code-font.png" width="30%"></td>
 <td>Source Code Pro was used for titles and navigation and mostly in with full capitalisation. Weights of SemiBold 600 and Extra Light 200</td>
 </tr>
 
 <tr>
 <td>Oxygen Mono was used for regular body, parapragph and button text. It is almost exlcusively used in lowercase format and with a weight of Regular 400</td>
-<td><img src="readme-files/screenshots/site/oxygen-mono-font.png" width="60%"></td>
+<td><img src="readme-files/screenshots/site/oxygen-mono-font.png" width="30%"></td>
 </tr>
 </table>
-
-<br />
-<br />
 <hr>
+<br />
+
 
 ### Colour
 The site's simplistic and elegant black & white frame design didn't intend to use much color. Only in adding additional highlights to important buttons. 
@@ -305,30 +333,30 @@ The following grey only colour added to the custom css and is used for buttons a
 
 Additional colours for main action buttons were provided by standard [Bootstrap button classes](https://getbootstrap.com/docs/4.0/components/buttons/)
 
+<br>
 <table>
 <tr>
 <th>Button</th>
 <th>Color / Class</th>
 </tr>
 <tr>
-<td><img src="readme-files/screenshots/site/like-button.png" width="90%"></td>
+<td><img src="readme-files/screenshots/site/like-button.png" width="60%"></td>
 <td>Bootstrap 'Primary'</td>
 </tr>
 <tr>
-<td><img src="readme-files/screenshots/site/unlike-button.png" width="100%"></td>
+<td><img src="readme-files/screenshots/site/unlike-button.png" width="70%"></td>
 <td>Bootstrap 'Danger'</td>
 </tr>
 <tr>
-<td><img src="readme-files/screenshots/site/delete-button.png" width="100%"></td>
+<td><img src="readme-files/screenshots/site/delete-button.png" width="70%"></td>
 <td>Bootstrap 'Danger'</td>
 </tr>
 <tr>
-<td><img src="readme-files/screenshots/site/update-button.png" width="100%"></td>
-<td>Bootstrap 'Secondary' + #3b3b3b</td>
+<td><img src="readme-files/screenshots/site/update-button.png" width="70%"></td>
+<td>Bootstrap 'Secondary' + #3b3b3b<br><br> *'Secondary' class is added so bootstrap hover effects still function, saving the need of additional css code</td>
 </tr>
 </table>
 <hr>
-<br>
 <br>
 
 ### Bootstrap
@@ -337,29 +365,39 @@ The [Bootstrap V5.3](https://getbootstrap.com/) frame work was used extensively 
 <br />
 <br />
 
-## Database
-<table>
-<tr>
-<td><img src="readme-files/wireframes/database.png" width="100%"></td>
-<td>
-
-*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*<br><br> 
-The database schema was designed with a typical forum structure in mind and allows the capture and storage of typical forum post data. The database is hosted by [ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data.
-</td>
-</tr>
-<tr>
-<td>The post model captures typical forum post data such as: title, subtitle, unique slug, author, date added and updated, body, likes, and a unique primary key which is generated with post creation. This model includes the additional field of 'category' to relate to the category model and allow rendering of the dynamic category menu and view pages. Future developments of this database may include media, file upload, and tag fields.</td>
-<td>The comments model allows users to comment on posts created by themselves or other users. Comments are saved to the model and displayed alongside the post model data when rendered in the templates.
-Finally, the contact model collects user data as a contact form and stores that data to be viewed by the admin in the django admin panel.</td>
-</tr>
-</table>
-<br />
-<br />
 
 ## CRUD
-<img src="" width="50%">
-<br />
-info
+### Add Post
+<table>
+<tr>
+<td>The first major piece of CRUD functionality is the ability to create a new post. Here, only authenticated users can access this page and generate a new post and new instance of the Post database model</td>
+<td><img src="readme-files/screenshots/site/add-post.png" width="100%"></td>
+</tr>
+</table>
+<br>
+
+### View Post(s)
+<table>
+<tr>
+<td>
+
+The second major piece of CRUD functionality is the ability to view all published posts that currently exist in the database and filter those posts using the category funciton. Users can view the enitre list of posts *(right)*; the list of available categories *(below)*, which adapts automatically when new categories are added by admins; and the list of posts within an available category *(below, right)*
+
+Here, only authenticated users can access this page and generate a new post and new instance of the Post database model</td>
+<td><img src="readme-files/screenshots/site/list-view.png" width="100%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/categories.png" width="87%">
+</td>
+<td><img src="readme-files/screenshots/site/category-list.png" width="100%"></td>
+</tr>
+</table>
+<br>
+
+### Update Posts
+
+
+
 
 <br />
 <br />
@@ -612,9 +650,34 @@ In the Dev Tools console the above error appears. This relates to the Javascript
 <br>
 
 ### 1. Messages 
-<img src="" width="70%">
+<table>
+<tr>
+<td>Message displays from a successful login</td>
+<td><img src="readme-files/screenshots/site/login-message.png" width="70%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/logout-message.png" width="70%"></td>
+<td>Message displays from a successful logout</td>
+</tr>
+<tr>
+<td>Message displays from a successful post creation</td>
+<td><img src="readme-files/screenshots/site/add-post-message.png" width="70%"></td>
+</tr>
+<tr>
+<td><img src="readme-files/screenshots/site/edit-post-message.png" width="70%"></td>
+<td>Message displays from a successful post update</td>
+</tr>
+<tr>
+<td>Message displays from a successful post deletion</td>
+<td><img src="readme-files/screenshots/site/delete-post-message.png" width="70%"></td>
+</tr>
+<tr>
 
-- 
+
+
+
+
+</table>
 
 <br />
 <br />

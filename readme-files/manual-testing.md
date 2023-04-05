@@ -314,8 +314,9 @@ Below is the account of all manual testing that has taken place on the project.
     <td>Manual URL Navigation: 'home'</td>
     <td>User attempts to access page directly via the url, bypassing login/register</td>
     <td>Forum data should not display. Lack of permissions message and redirection to display instead</td>
-    <td>**FAIL**</td>
-    <td>Can navigate to index and view lists of posts. Navbar hidden.</td>
+    <td>FAIL!</td>
+    <td>Can navigate to index and view lists of posts. Navbar hidden.<br><br>
+    SOLVED - PASS - Authentication added to index page</td>
   </tr>
   <tr>
     <td>Manual URL Navigation: 'add-post'</td>
