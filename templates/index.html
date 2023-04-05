@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
+{% block content %}
 {% if user.is_authenticated %}
-  {% block content %}
   <div class="container-fluid">
       <div class="row">
           <div class="col-12 mt-3">
@@ -42,7 +42,6 @@
           </div>
       </div>
   </div>
-  {% endblock %}
 {% else %}
   <!-- Display if user navigates to page and isn't logged in -->
   <div class="row">
@@ -57,3 +56,4 @@
     </div>
   </div>
 {% endif %}
+{% endblock %}
