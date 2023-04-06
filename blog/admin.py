@@ -26,7 +26,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'subject', 'message', 'member', 'date')
+    list_display = ('name', 'email', 'subject', 'member', 'date')
     list_filter = ('date', 'name', 'member')
     search_fields = ['name', 'subject']
     summernote_fields = ('message')
