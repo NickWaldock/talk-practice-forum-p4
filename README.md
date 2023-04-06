@@ -8,43 +8,61 @@
 
 # Table of Contents
 1. [Introduction](#introduction)
-    1. [Aims](#aims)
-    2. [User Stories](#user-stories)
+
+2. [Project Planning](#project-planning)
+    - [Aims](#aims)
+    - [Milestones](#milestones)
+    - [Epics](#epics)
+    - [User Stories](#user-stories)
+    - [Wireframes](#wireframes)
+    - [Database](#database)
+    - [Agile Methodology](#agile-methodology)
+
 2. [Main Features](#main-features)
-    1. [Wireframes](#wireframes)
-    2. [DataBase](#database)
-    3. [](#)
-    4. [](#)
-    5. [](#)
-    6. [](#)
-    7. [](#)
-    8. [](#)
-    9. [](#)
+    - [UX Design](#ux-desgin)
+    - [Typography](#typography)
+    - [Colour](#colour)
+    - [Bootstrap](#bootstrap)
+    [CRUD](#crud)
+    1. [Add Post](#add-post)
+    2. [View Post](#view-posts)
+    3. [Update Post](#update-posts)
+    4. [Delete Post](#delete-post)
+    5. [Add Category](#add-category)
+    6. [Dynamic Category Menu](#dynamic-category-menu)
+    7. [Contact](#contact)
+    8. [Messages](#messages)
+
 3. [Future Development](#future-developments)
+
 4. [Technologies](#technologies)
-    1. [](#)
+  1. [Requirements](#requirements)
+  2. [Tools](#tools)
+
 5. [Testing](#testing)
-    1. [Pep8](#pep8)
-    2. [Manual Testing](#manual-testing)
-    3. [Tools](#tools)
-    4. [Bugs](#bugs)
+  1. [Pep8](#pep8)
+  2. [HTML Validation](#html-validation)
+  3. [CSS Validation](#css-validation)
+  4. [Javascript Validation](#javascript-validation)
+  5. [Lighthouse Report](#lighthouse-report)
+  6. [Manual Testing](#manual-testing)
+  7. [Bugs](#bugs)
+
 6. [Deployment](#deployment)
-    1. [Heroku](#heroku)
-    2. [Forking](#forking)
-    3. [Cloning](#cloning)
+  1. [Heroku](#heroku)
+  2. [Forking](#forking)
+  3. [Cloning](#cloning)
+
 7. [References & Acknowledgements](#references--acknowledgements)
-   1. [References](#references)
-   2. [General Reference](#general-reference)
-   3. [Code Reference](#code-reference)
-   4. [Code Syntax Validators](#code-syntax-validators)
-   5. [Acknoledgements](#acknoledgements)
+  1. [General Reference](#general-reference)
+  2. [Code Reference](#code-reference)
+  3. [Acknoledgements](#acknoledgements)
 <br />
 <br />
 
 # Introduction
 
-This project forms the 4th submission for my participation in [Code Institute's](https://codeinstitute.net) Full Stack Software Developer Diploma. The inspiration for the project comes as a continuation from my previous Python-based project [*Nick's Practice Log*](https://github.com/NickWaldock/practice-log), a chat-based CLI program designed to log the details of a musician's practice routine. The *Talk Practice* project is designed as a forum site for musicians to discuss musical practice. Many music forums exist on all manner of musical topics, manily around the subject of equipment, but there are very few that exist that center around the topic of musical practice. It is this gap that the *Talk Practice* project will attempt to fill.
-<br>
+This project forms the 4th submission for my participation in [Code Institute's](https://codeinstitute.net) Full Stack Software Developer Diploma. The inspiration for the project comes as a continuation from my previous Python-based project [*Nick's Practice Log*](https://github.com/NickWaldock/practice-log), a chat-based CLI program designed to log the details of a musician's practice routine. The *Talk Practice* project is designed as a forum site for musicians to discuss musical practice with the aim to eventually allow users to log individual practice records and data, and gain analytics and insights on that data. Many music forums exist on all manner of musical topics, manily around the subject of equipment, but there are very few that exist (if any) that center around the topic of musical practice. It is this gap that the *Talk Practice* project attempts to fill.
 <hr>
 <br>
 <br>
@@ -127,7 +145,7 @@ The main features required for this project were collated into Epics and incorpo
 <td>Design features to make the user experience (UX) ergonomically and aesthetically pleasing, as well as simple and intuitive to navigate</td>
 </tr>
 </table>
-<hr>
+
 <br />
 <br />
 
@@ -192,7 +210,7 @@ As an admin, I want to be able to:
 
 ## Wireframes
 Wireframe designs were mocked up to visualise the basic design of the site in-line with the user stories and allowed a visual guide for development
-<br>
+<br><br>
 <table>
 <tr>
 <td><img src="readme-files/wireframes/landing-page.png" width="100%"></td>
@@ -238,26 +256,22 @@ Wireframe designs were mocked up to visualise the basic design of the site in-li
 
 <br />
 <br />
-<hr>
+
 
 ## Database
 <table>
 <tr>
 <td><img src="readme-files/wireframes/database.png" width="100%"></td>
 <td>
-
-*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*<br><br> 
-The database schema was designed with a typical forum structure in mind and allows the capture and storage of typical forum post data. The database is hosted by [ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data.
-</td>
-</tr>
-<tr>
-<td>The post model captures typical forum post data such as: title, subtitle, unique slug, author, date added and updated, body, likes, and a unique primary key which is generated with post creation. This model includes the additional field of 'category' to relate to the category model and allow rendering of the dynamic category menu and view pages. Future developments of this database may include media, file upload, and tag fields.</td>
-<td>The comments model allows users to comment on posts created by themselves or other users. Comments are saved to the model and displayed alongside the post model data when rendered in the templates.
-Finally, the contact model collects user data as a contact form and stores that data to be viewed by the admin in the django admin panel.</td>
-</tr>
+The database schema was designed with a typical forum structure in mind and allows the capture and storage of typical forum post data. The database is hosted by [ElephantSQL](https://www.elephantsql.com/) using a [PostgresSQL](https://www.postgresql.org/) relational database structure for storing the django models data.<br><br>
+The post model captures typical forum post data such as: title, subtitle, unique slug, author, date added and updated, body, likes, and a unique primary key which is generated with post creation. This model includes the additional field of 'category' to relate to the category model and allow rendering of the dynamic category menu and view pages. Future developments of this database may include media, file upload, and tag fields.<br><br>
+The comments model allows users to comment on posts created by themselves or other users. Comments are saved to the model and displayed alongside the post model data when rendered in the templates.
+Finally, the contact model collects user data as a contact form and stores that data to be viewed by the admin in the django admin panel.
+</td></tr>
 </table>
-<br />
-<br />
+
+*Database chart was created using [Lucid Chart](https://www.lucidchart.com/)*
+<br /><br />
 
 
 ## Agile Methodology
@@ -309,31 +323,30 @@ The following images represent evidence for an [Agile Methodology](https://agile
 <br>
 <br>
 
-<table>
-<tr>
-<td><img src="readme-files/screenshots/site/source-code-font.png" width="30%"></td>
-<td>Source Code Pro was used for titles and navigation and mostly in with full capitalisation. Weights of SemiBold 600 and Extra Light 200</td>
-</tr>
 
-<tr>
-<td>Oxygen Mono was used for regular body, parapragph and button text. It is almost exlcusively used in lowercase format and with a weight of Regular 400</td>
-<td><img src="readme-files/screenshots/site/oxygen-mono-font.png" width="30%"></td>
-</tr>
-</table>
+<img src="readme-files/screenshots/site/source-code-font.png" width="10%"><br>
+
+- Source Code Pro was used for titles and navigation and mostly in with full capitalisation. Weights of SemiBold 600 and Extra Light 200
+<br><br>
+
+<img src="readme-files/screenshots/site/oxygen-mono-font.png" width="10%"><br>
+
+- Oxygen Mono was used for regular body, parapragph and button text. It is almost exlcusively used in lowercase format and with a weight of Regular 400
+
 <hr>
 <br />
 
 
 ### Colour
-The site's simplistic and elegant black & white frame design didn't intend to use much color. Only in adding additional highlights to important buttons. 
-The following grey only colour added to the custom css and is used for buttons and social media icons
+The site's simplistic and elegant black & white frame design didn't intend to use much color. Only in adding additional highlights to important buttons <br>
+
+- The following grey only colour added to the custom css and is used for buttons and social media icons
 <br>
 <img src="readme-files/screenshots/site/button-color.png" width="10%">
-<br>
+<br><br>
 
 Additional colours for main action buttons were provided by standard [Bootstrap button classes](https://getbootstrap.com/docs/4.0/components/buttons/)
 
-<br>
 <table>
 <tr>
 <th>Button</th>
@@ -367,289 +380,122 @@ The [Bootstrap V5.3](https://getbootstrap.com/) frame work was used extensively 
 
 
 ## CRUD
+Create, read, update, delete functionality are part of the main requirments of this project. Below details are given of how these functions are intigrated into the site on the front-end <br><br>
+
+
 ### Add Post
 <table>
 <tr>
 <td>The first major piece of CRUD functionality is the ability to create a new post. Here, only authenticated users can access this page and generate a new post and new instance of the Post database model</td>
 <td><img src="readme-files/screenshots/site/add-post.png" width="100%"></td>
+<td><img src="readme-files/screenshots/site/phone-3.png" width="70%"></td>
 </tr>
 </table>
+<hr>
 <br>
 
 ### View Post(s)
 <table>
 <tr>
 <td>
-
-The second major piece of CRUD functionality is the ability to view all published posts that currently exist in the database and filter those posts using the category funciton. Users can view the enitre list of posts *(right)*; the list of available categories *(below)*, which adapts automatically when new categories are added by admins; and the list of posts within an available category *(below, right)*
+The second major piece of CRUD functionality is the ability to view all published posts that currently exist in the database and filter those posts using the category funciton. Users can view the enitre list of posts which automatically order by most recent *(right)*; the list of available categories *(below)*, which adapts automatically when new categories are added by admins; and the list of posts within an available category *(below, right)*
 
 Here, only authenticated users can access this page and generate a new post and new instance of the Post database model</td>
 <td><img src="readme-files/screenshots/site/list-view.png" width="100%"></td>
+<td><img src="readme-files/screenshots/site/phone-1.png" width="70%"></td>
+
 </tr>
 <tr>
 <td><img src="readme-files/screenshots/site/categories.png" width="87%">
 </td>
 <td><img src="readme-files/screenshots/site/category-list.png" width="100%"></td>
+<td><img src="readme-files/screenshots/site/phone-4.png" width="70%"></td>
 </tr>
 </table>
+<br>
+
+<table>
+<tr>
+<td>The main article view allows the user to fully experience the article's details, including the date, number of likes, view comments. Available links on this page include the category which links the user to the list of posts associated with the current category. </td>
+<td><img src="readme-files/screenshots/site/article.png" width="80%"></td>
+<td><img src="readme-files/screenshots/site/phone-5.png" width="70%"></td>
+</tr>
+<tr>
+<td>The user is also able to interact with the post for the first time by liking and commenting. Once again, the edit button is only available for the user who is the post's author. This button similarly directs the user to the update post page. Note the sidebar has also migrated down the page to maintain in view</td>
+<td><img src="readme-files/screenshots/site/article-2.png" width="80%"></td>
+</tr>
+<tr>
+<td>In this image the user has commented on, and liked a post. The comment becomes available and the like button switches to an unlike button if the user decides to withdraw the like</td>
+<td><img src="readme-files/screenshots/site/article-3.png" width="80%"></td>
+<td><img src="readme-files/screenshots/site/phone-6.png" width="70%"></td>
+</tr>
+</table>
+<hr>
 <br>
 
 ### Update Posts
-
-
-
-
-<br />
-<br />
-
-<img src="" width="50%">
-<br />
-info
-
-<br />
-<br />
-
-## 1. Create
-<img src="" width="50%">
-<br />
-
-Add post
-
-
-<br />
-<br />
-
-<img src="" width="50%">
-<br />
-add category
-Dynamic nav bar menu
-<br />
-<br />
-
-
-<img src="" width="50%">
-<br />
-Contact form
-
-<br />
-<br />
-
-## 2. Read / View
-<img src="" width="50%">
-<br />
-view Posts list
-
-<br />
-<br />
-<img src="" width="50%">
-view full article
-
-<br />
-<br />
-
-
-## 3. Update Post
-<img src="" width="50%">
-<br />
-Update Post
-<br />
-<br />
-
-
-
-## 4. Delete Post
-<img src="" width="50%">
-<img src="" width="50%">
-<br />
-Delete post
-<br />
-<br />
-
-## 4. Dynamic Category Menu
-<img src="" width="50%">
-<br />
-dynamic category menu
-<br />
-<br />
-
-<img src="" width="50%">
-<br />
-dynamic category list page
-<br />
-<br />
-
-
-<img src="" width="50%">
-<br />
-Articles by category list page
-<br />
-<br />
-
-## 5. Contact Page
-<img src="" width="50%">
-<br />
-Contact page
-<br />
-<br />
-
-## 6. Messages
-<img src="" width="50%">
-<br />
-Form validation and login messages
-<br />
-<br />
-
-# Future Developments
-This project has a great deal of developmental potential in features that could eventually add increased functionality and a deeper user experiece. 
-
-The following are a few examples:
-- Page loading by 10 posts when there are multiple posts- pagination
-- Save post as draft
-- Sidebar becomes footer in md and small screens
-- Reset password / forgotten password links
-- Search function
-- Allow the user to add Tags to a post and search other posts for relevant tags. Add a tag cloud to the sidebar for easy navigation
-- Rich text editor on front end, formatting the display of posts
-- In the contact form, remove the checkbox asking if user is a member and code to check for this automatically on submission
-- Having the post card clickable to navigate to the post rather than just the title, but still able to click the author or category to navigate
-- Allow personal profiles page, to add, update user's public information
-- Post author's user profile's linked to relevant posts for public viewing
-- Full admin functionality to manage categories on the front-end
-- A message to display when navigating to a category with no active posts
-- Post pagination
-- Fixed footer for mobiles - currently the user must scroll to the end of the post list to view the footer on the Home Post List View
-- Add a report button for users to report inappropriate posts or comments
-- Allow a user to view and manage all their own authored posts
-
-<br />
-<br />
-
-# Technologies
-Technologies used in this site are:
-- [Django]() for the rendering of the database models and templates
-- [Javascript]() at this point in the project JS is soley used for making django validation messages auto-dissapear, and to automatically set the current user as the 'author' in the form field for the database when adding a new post
-- [HTML]() for creating the web templates and navigating between them
-- [CSS]() for custom styling
-- [Bootstrap]() for general layout and styling
-
-
-Additional technologies include: 
-- [GitHub](https://github.com/)
-  - Site repository
-- [Gitpod](https://gitpod.io/)
-  - Online IDE for all coding work and site file management, terminal was used to add, commit, and push to Github
-<br />
-<br />
-
-## Requirements
-Additional requirements used in this python project include:
-<br />
-
-<img src="" width="30%">
-<br />
-
-- 
-
-<br />
-<br />
--
-
-<br />
-<br />
-
-# Testing
-## Code Validation
-### Pep8
-<br>
-All custom python files in the 'blog' directory comply with pep8 standard formatting and show no errors or warnings.
-<br>
-Django produced python files (manage.py & settings.py) raise some minor formatting errors
-<br />
-<br />
-
-### HTML Validation
-<img src="readme-files/screenshots/reports-bugs/html-validation-report.png" width="30%">
-<br>
-- No warnings present
-<br>
-<br>
-
-### CSS Validation
-<img src="readme-files/screenshots/reports-bugs/css-validation-report.png" width="30%">
-<br>
-- 1 Warning is reported: *"-webkit-sticky is a vendor extension"*
-<br>
-<br>
-
-## Javascript Validation
-<img src="readme-files/screenshots/reports-bugs/javascript-validation-report.png" width="30%">
-<br>
-<br>
-
-### Lighthouse Report
-<img src="readme-files/screenshots/reports-bugs/lighthouse-report.png" width="30%">
-<br>
-Three detrimental messages occur in the lighthouse report, for Best Practices:
-<br>
-
-1. *"Includes front-end JavaScript libraries with known security vunerabilities: jQuery@3.2.1"*
-2. *"Browser errors were logged to the console"* This bug is detailed [below](#bugs).
-3. *"Issues were logged in the ISSUES panel in Chrome Dev Tools"* The only issue logged states: *"Audit usage of navigator.userAgent, navigator.appVersion, and navigator.platform"* A solution is proposed in the report which will be implemented in the next development cycle of the project.
-
-<br />
-<br />
-
-## Manual Testing 
-Each function and validation has been manually tested. All testing logs can her viewed here:
-[>> Testing](/readme-files/manual-testing.md)
-<br />
-<br />
-
-
-## Tools
-Tools used in the development of this project include:
-- [GitHub](https://github.com/)
-- [GitPod](https://gitpod.io/)
-- [Heroku](https://heroku.com/)
-- [Lucid Chart](https://www.lucidchart.com/)
-<br />
-<br />
-
-## Bugs
 <table>
 <tr>
-<th>Description</th>
-<th>Status</th>
+<td>
+Similarly to the add post page, the update post page allows users to edit the contents of a prexisting database instance of the Post model. The page is navigated to through any of the view forms on a card that has the 'edit' button. 
+<td>The edit button only exists on a card if the logged-in user is recognised as the post author, thereby only allowing the correct user to access the edit post page. Relevant data from the database is rendered on the page for the user to edit. The user then has the option to update the post and updating the database according, or to delete the post which navigates to a confirmation of intention to delete page</td>
+</td>
 </tr>
 
 <tr>
-  <td>On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge</td>
-  <td>*SOLVED*</td>
+<td><img src="readme-files/screenshots/site/update-post.png" width="100%"></td>
+<td><img src="readme-files/screenshots/site/edit-list.png" width="100%"></td>
 </tr>
-
-<tr>
-  <td>On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should</td>
-  <td>*SOLVED*</td>
-</tr>
-<tr>
-  <td>
-  <img src="readme-files/screenshots/reports-bugs/bug.png" width="30%"><br>
-In the Dev Tools console the above error appears. This relates to the Javascript that accounts for the display timeout django messages that appear when a user interacts with any of the forms on the site. This usually appears on a hard refresh of the site and dissapears once a form has been submitted and a  subsequent message has been displayed</td>
-  <td>Unsolved</td>
-</tr>
-<tr>
-<td>The contact page cannot be reached if not logged in. This goes against the original purpose of the contact page to be available for non-users to send enquiries, particularly as the form allows for the confirmation of member status. Either the form and model will require the member status checkbox to be removed and only registered users generally allowed to send a contact form, or the page will need to be reorganised in its relationship to the base template file in order for it to be availabel to non users.</td>
-</tr>
-
-
 </table>
-
 <hr>
+<br><br>
 
-<br>
-<br>
+### Delete Post
 
-### 1. Messages 
+<table>
+<tr>
+<td>If a user has the correct permissions (i.e. is the author) to access the update post page for a particular post then the option to delete the post is also available via the delete button. If the user clicks this they are then forwarded to this page which confirms the user's intent to delete. This delete page contains the title of the post selected to be deleted and the option to continue to delete or return. Clicking delete permanently removes the instance of the post and redirects the user back to the main post list view, or 'home'. Clicking the return button, also redirects the user to the home view but leaves the instance of the post intact</td>
+<td><img src="readme-files/screenshots/site/delete-post.png" width="100%"></td>
+
+</tr>
+</table>
+<hr>
+<br><br>
+
+
+### Add Category
+<br>
+<img src="readme-files/screenshots/site/admin-nav.png" width="100%">
+<br><br>
+If a user is recognised as admin/staff then the add category nav link becomes available. This feature is the first part of a planned [future development](#future-developments) to allow the admins front-end management functionality for the site. This simple page allows the admin to add a new category to the database for future posts to be filitered by. This category list is reflected in the following navbar dropdown and category list page. On clicking the add button, the inputted category is saved to the database and the admin is redirected to the main home page list view
+<br><br>
+<img src="readme-files/screenshots/site/add-category.png" width="100%">
+<hr>
+<br><br>
+
+### Dynamic Category Menu
+
+<table>
+<tr>
+<td>When the category list is updated this is immediately reflected in the category dropdown menu in the navbar. This is available to all users and allows them to directly visit a list of posts relating to the particular category</td>
+<td><img src="readme-files/screenshots/site/dynamic-menu.png" width="80%"></td>
+</tr>
+</table>
+<hr><br><br>
+
+### Contact
+<table>
+<tr>
+<td>The contact page allows the user to send a message to the site owners. This page is available to all users including un-registered users. The form includes name, email, subject, and message fields, as well as a checkbox for the admins arrange and collate messages from non-users. Clicking the send button posts the form data to the database which becomes available for the admins to view in the django admin panel</td>
+<td><img src="readme-files/screenshots/site/contact.png" width="100%"></td>
+</tr>
+</table>
+<hr><br><br>
+
+### Messages
+<br>
+The site utilises Django's built-in [messaging](https://docs.djangoproject.com/en/4.1/ref/contrib/messages/) framework and displays a message to the user in the event of a successful login, logout, post creation, post update, post deletion, and category creation
+
 <table>
 <tr>
 <td>Message displays from a successful login</td>
@@ -671,24 +517,178 @@ In the Dev Tools console the above error appears. This relates to the Javascript
 <td>Message displays from a successful post deletion</td>
 <td><img src="readme-files/screenshots/site/delete-post-message.png" width="70%"></td>
 </tr>
-<tr>
-
-
-
-
-
 </table>
+<hr>
 
 <br />
 <br />
 
-### 2. Heroku
-<img src="readme-imgs/herouku-bug.png" width="70%">
+# Future Developments
+This project has a great deal of developmental potential in features that could eventually add increased functionality and a deeper user experiece. 
 
-- On deployment to [Heroku](https://signup.heroku.com/) a irritating bug occurs within the console. The program uses specific and commonly used 'clear screen' command (from the [OS Module](https://docs.python.org/3/library/os.html)) which within the IDE GitPod functions as intended. However, within Heroku although the clear screen command seems functional, if the user scrolls up the console previous printed data can be viewed is glitched. On researching this issue I found little help, and at the time of deployment I was unable to solve this issue.
+The following are a few examples:
+- Page loading by 10 posts when there are multiple posts (pagination)
+- The ability for users to save post as draft before publishing
+- Users able to manage all of their posts in a single page
+- Reset password / forgotten password links
+- Search function to search site-wide
+- Allow the user to add Tags to a post and search other posts for relevant tags. Add a tag cloud to the sidebar for easy navigation
+- Rich text editor on front end, formatting the display of posts
+- Posts maintain their formatting when being displayed
+- In the contact form, remove the checkbox asking if user is a member and code to check for this automatically on submission
+- Having the post card clickable to navigate to the post rather than just the title, but still able to click the author or category to navigate
+- Allow personal profiles page, to add, update user's public information. Make this available to users as a link from author's name on posts
+- Post author's user profile's linked to relevant posts for public viewing
+- Full admin functionality to manage categories on the front-end
+- A message to display when navigating to a category with no active posts
+- Footer for mobiles - currently the user must scroll to the end of the post list to view the footer on the Home Post List View
+- Add a report button for users to report inappropriate posts or comments
+- Allow a user to view and manage all their own authored posts
+- Allow users to upload media alongside posts. Video, audio, pdf, files, etc and tag these as desired
+- Create app for users to log their own practice sessions with data such as duration, focus-level score, date, practice material, notes; and allow them to gain insights based-on their shared data
+
 <br />
 <br />
 
+# Technologies
+Technologies used in this site are:
+- [Django](https://www.djangoproject.com/) for the rendering of the database models and templates
+- [ElephantSQL](https://www.elephantsql.com/) for hosting and managing the database
+- [Javascript](https://www.javascript.com/) at this point in the project JS is soley used for making django validation messages auto-dissapear, and to automatically set the current user as the 'author' in the form field for the database when adding a new post
+- [HTML](https://en.wikipedia.org/wiki/HTML) for creating the web templates and navigating between them
+- [CSS](https://en.wikipedia.org/wiki/CSS) for custom styling
+- [Bootstrap](https://getbootstrap.com/) for general layout and styling
+- [AllAuth](https://django-allauth.readthedocs.io/en/latest/)
+    - Integrated djagno applications managing authentication, registration and account management
+- [Summernote](https://summernote.org/)
+    - Text editor 
+- Additional project requirements can be viewed in the [requirememts.txt](requirements.txt) file
+
+## Tools
+Tools used in the development of this project include:
+- [GitHub](https://github.com/)
+    - Site repository
+- [GitPod](https://gitpod.io/) 
+    - Online IDE for all coding work and site file management, terminal was used to add, commit, and push to Github
+- [Heroku](https://heroku.com/) 
+    - Deployment Host
+- [Lucid Chart](https://www.lucidchart.com/) 
+    - Database Chart
+- [Balsamiq](https://balsamiq.com/) 
+    - Wireframes
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/)
+    - Browser developer tools
+- [Cloudinary](https://cloudinary.com/)
+    - Static files hosting
+- [Looka](https://looka.com/)
+    - Logo design
+- [Random Text Generator](https://randomtextgenerator.com/)
+    - Random text generator for test posts
+<hr>
+<br />
+<br />
+
+# Testing
+## Pep8
+<br>
+All custom python files in the 'blog' directory comply with pep8 standard formatting and show no errors or warnings.
+<br>
+Django produced python files (manage.py & settings.py) raise some minor formatting errors
+<br />
+<br />
+
+## HTML Validation
+All HTML validation tests returned with no errors or warnings
+<br>
+<table>
+<tr>
+<td><img src="readme-files/screenshots/reports-bugs/valid-1.png" width="100%"></td>
+<td><img src="readme-files/screenshots/reports-bugs/valid-2.png" width="100%"></td>
+<td><img src="readme-files/screenshots/reports-bugs/valid-3.png" width="100%"></td>
+</tr>
+
+<tr>
+<td><img src="readme-files/screenshots/reports-bugs/valid-4.png" width="100%"></td>
+<td><img src="readme-files/screenshots/reports-bugs/valid-5.png" width="100%"></td>
+<td><img src="readme-files/screenshots/reports-bugs/valid-6.png" width="100%"></td>
+</tr>
+
+<tr>
+<td><img src="readme-files/screenshots/reports-bugs/valid-7.png" width="100%"></td>
+<td><img src="readme-files/screenshots/reports-bugs/valid-8.png" width="100%"></td>
+<td><img src="readme-files/screenshots/reports-bugs/valid-9.png" width="100%"></td>
+</tr>
+<tr><td><td><img src="readme-files/screenshots/reports-bugs/valid-10.png" width="100%"></td></td></tr>
+</table>
+<hr><br><br>
+
+## CSS Validation
+<img src="readme-files/screenshots/reports-bugs/css-validation-report.png" width="30%">
+<br>
+- 1 Warning is reported: *"-webkit-sticky is a vendor extension"* which relates to Bootstrap
+<hr><br><br>
+
+## Javascript Validation
+<img src="readme-files/screenshots/reports-bugs/javascript-validation-report.png" width="30%">
+<hr><br><br>
+
+## Lighthouse Report
+<img src="readme-files/screenshots/reports-bugs/lighthouse-report.png" width="30%">
+<br>
+Three detrimental messages occur in the lighthouse report, for Best Practices:
+<br>
+
+1. *"Includes front-end JavaScript libraries with known security vunerabilities: jQuery@3.2.1"*
+2. *"Browser errors were logged to the console"* This bug is detailed [below](#bugs).
+3. *"Issues were logged in the ISSUES panel in Chrome Dev Tools"* The only issue logged states: *"Audit usage of navigator.userAgent, navigator.appVersion, and navigator.platform"* A solution is proposed in the report which will be implemented in the next development cycle of the project.
+
+<hr><br><br>
+
+## Manual Testing 
+Each function and validation has been manually tested. All testing logs can her viewed here:
+[>> Testing](/readme-files/manual-testing.md)
+<br><br>
+
+## Bugs
+<table>
+<tr>
+<th>Number</th>
+<th>Description</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>1</td>
+  <td>On desktop - Safari: The checkbox button for the contact form renders on the left of the page and not the center as it should, and as it does in Chrome, Firefox, and Edge</td>
+  <td>*SOLVED*</td>
+</tr>
+
+<tr>
+<td>2</td>
+  <td>On Tablets - Safari, Firefox, Chrome, Edge: The checkbox button for the contact form renders on the left of the page and not the center as it should</td>
+  <td>*SOLVED*</td>
+</tr>
+<tr>
+<td>3</td>
+  <td>
+  <img src="readme-files/screenshots/reports-bugs/bug.png" width="30%"><br>
+In the Dev Tools console the above error appears. This relates to the Javascript that accounts for the display timeout django messages that appear when a user interacts with any of the forms on the site. This usually appears on a hard refresh of the site and dissapears once a form has been submitted and a  subsequent message has been displayed</td>
+  <td>Unsolved - Bug Logged</td>
+  <td><img src="readme-files/screenshots/reports-bugs/bug-2.png" width="100%"></td>
+</tr>
+<tr>
+<td>4</td>
+<td>The contact page cannot be reached if not logged in. This goes against the original purpose of the contact page to be available for non-users to send enquiries, particularly as the form allows for the confirmation of member status. Either the form and model will require the member status checkbox to be removed and only registered users generally allowed to send a contact form, or the page will need to be reorganised in its relationship to the base template file in order for it to be availabel to non users.</td>
+<td>*SOLVED* - page can now be reached as expected</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Currently, if an admin deletes a category in the admin panel that has posts associated with it this is not delete the associated posts. The category is removed from the navigation bar and category list page, but the post still exists in the main list view. Clicking on that category still navigates the user to the category post list view of the deleted category.</td>
+<td>Unsolved - Bug Logged</td>
+<td><img src="readme-files/screenshots/reports-bugs/bug-3.png" width="100%"></td>
+</tr>
+</table>
+<hr><br><br>
 
 
 # Deployment
@@ -697,25 +697,20 @@ The live site can be accessed [here](https://talk-practice-forum-p4.herokuapp.co
 <br />
 
 ## Heroku
-This project was deloyed to [Heroku](https://heroku.com/) with the following steps:
-1. Log in to Heroku (create an account if necessary)
-2. Navigate to your dashboard, click "New" and select "Create new app"
-3. Input an appropriate name for your project and choose a region
-4. Click the "Settings" tab
-5. Click "Reveal Config Vars"
-6. Input PORT and 8000 as one config var and click add
-7. Input CREDS and the information from your Google Sheet API creds file as another config var and click add
-8. Click "Add buildpack"
-9. Add "nodejs" and "python" from the list or search if required, click save.
-10. Ensure python is the first build pack. YOu can drag to change the order
-11. Select "Deploy" from the heading tabs
-12. Select "GitHub - Connect to GitHub" next to the Deployment Methods
-13. Click "Connect to GitHub"
-14. Search for the repository ("practice-log") and click to connect
-15. Click either 'Enable Automatic Deploys' or 'Deploy Branch' to deploy manually. If you select Deploy Branch please note you will need to manually deploy each time you update the repository.
-16. Finally, click 'View' to visit the deployed site. It may take a moment to become visible
-<br />
-<br />
+To deploy on Heroku:
+1. Log in to [Heroku](https://www.heroku.com/) (create an account if necessary)
+2. From the dashboard, click on the "New" button and select "Create new app"
+3. Choose an appropriate name for your app and select the region closest to your location
+4. Access the "Settings" tab
+5. Click on "Reveal Config Vars"
+6. Add all necessary key-value pairs from the .env file. Make sure not to include DEBUG and      DEVELOPMENT variables.
+7. Click on "Add buildpack" and add "python" from the list. Click "save"
+8. Access the "Deploy" tab
+9. Select "GitHub - Connect to GitHub" from the deployment methods and click on "Connect to GitHub"
+10. Search for the relevant GitHub repository and click it
+11. Choose automatic deploys to allow the deployed site to be updated each time code is pushed to GiHub
+12. Click "View" to view the deployed site. The site is now deployed!
+<br><br>
 
 ## Forking
 To fork this repository on [Github](https://github.com/NickWaldock/practice-log) proceed with the following steps:
@@ -742,98 +737,44 @@ To clone the repository procees with the following steps:
        - To clone a repository using GitHub CLI, click GitHub CLI, then copy url
     7. Open Terminal and change the current directory to where you want the cloned directory
     8. Type git clone, and paste the url, press Enter to create your local clone
-<br />
-<br />
 
-# References & Acknoledgements
+<hr><br /><br />
+
+# References & Acknowledgements
 - Gitpod repository template provided by [Code Institute](https://codeinstitute.net)
-<br />
-<br />
+<br /><br />
 
 ## General Reference
 - [Python](https://www.python.org/)
-General Reference
+- [PyPi](https://pypi.org/)
+- [Real Python](https://realpython.com/)
+- [Card Hover](https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers)
+- [Django Reference](https://docs.djangoproject.com/)
+- [Django Slugs 1](https://forum.djangoproject.com/t/django-how-to-add-slug-as-arguments-in-url-tag-using-django/12636)
+- [Django Slugs 2](https://forum.djangoproject.com/t/passing-slug-to-createview/4287)
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/)
+- [Django Messages 1](https://docs.djangoproject.com/en/3.2/ref/contrib/messages/#using-messages-in-views-and-templates)
+- [Django Messages 2](https://stackoverflow.com/questions/24914637/show-a-successful-message-with-class-based-views)
+- [Django Messages 3](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown)
 
-<br />
-<br />
+<br /><br />
 
 ## Code Reference - Walkthroughs
-
-<br />
-<br />
-
-### Walkthrough Reference 1
--[]()
-
-<br />
-<br />
-
-### Walkthrough Reference 2
-- []()
-
-<br />
-<br />
-
-## Code Syntax Validators
-The following sites were used for syntax and logic checking:
+The following walkthrough projects were used as inspiration and code was adapted for this project
+- [Code Institute's 'Hello Django'](https://codeinstitute.net/)
+- [Code Institute's 'CodeStar Blog'](https://codeinstitute.net/)
+- [Codemy.com](https://www.youtube.com/playlist?list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
+- [Udemy](https://www.udemy.com/course/django-project-djblogger/?utm_source=adwords&utm_medium=udemyads&utm_campaign=LongTail_la.EN_cc.UK&utm_content=deal4584&utm_term=_._ag_76288949676_._ad_532713168364_._kw__._de_c_._dm__._pl__._ti_dsa-787269366885_._li_9046639_._pd__._&matchtype=&gclid=Cj0KCQjw27mhBhC9ARIsAIFsETGU4HA2rjldlK9JD15z3_SyRyS5Y7Jt2aaOqUrdyAW-rStT_lHRDkwaAssLEALw_wcB)
 <br />
 <br />
 
 ## Acknoledgements
-I am incredibly grateful to my Code Institute Mentor Chris Quinn for his support and guidance, as well as the course providers and tutors at Code Institute for the expertise and support.
+I am incredibly grateful to my Code Institute Mentor Chris Quinn for his support, knowledge, and guidance, as well as the course providers and tutors at Code Institute for their expertise and support
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/nicholas-waldock-05237071/)
+Connect with me on [LinkedIn](https://www.linkedin.com/in/nicholas-waldock-05237071/) or through my [website](https://www.nicholasjameswaldock.uk)if you would like to discuss any of my projects or the prospect of working together
 
+Thanks for stopping by, and Happy Practicing!
+<br><br>
+<img src="readme-files/signoff.png" width="10%">
 
 ------------------------------------------------------------------------------------------
-
-
-Improvments
-
-
-
-References
-Summernote
-https://summernote.org/
-
-Python
-https://realpython.com/
-
-Elephant SQL Database
-Cloudinary media and static files hosting
-
-For logo design
-https://looka.com/
-
-CSS
-For navbar gradient
-https://mdbootstrap.com/docs/standard/tools/design/gradients/
-
-Card Hover
-https://ordinarycoders.com/blog/article/codepen-bootstrap-card-hovers
-
-
-
-Django
-https://ccbv.co.uk/projects/Django/4.1/django.views.generic.edit/CreateView/
-https://docs.djangoproject.com/
-
-Slugs
-https://forum.djangoproject.com/t/django-how-to-add-slug-as-arguments-in-url-tag-using-django/12636
-https://forum.djangoproject.com/t/passing-slug-to-createview/4287
-
-All Auth
-https://django-allauth.readthedocs.io/en/latest/
-
-Messages
-https://docs.djangoproject.com/en/3.2/ref/contrib/messages/#using-messages-in-views-and-templates
-https://stackoverflow.com/questions/24914637/show-a-successful-message-with-class-based-views
-https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown
-
-
-
-
-
-
-Random Text Generator - for post content
-https://randomtextgenerator.com/
