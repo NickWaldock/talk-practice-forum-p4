@@ -63,6 +63,8 @@
 # Introduction
 
 This project forms the 4th submission for my participation in [Code Institute's](https://codeinstitute.net) Full Stack Software Developer Diploma. The inspiration for the project comes as a continuation from my previous Python-based project [*Nick's Practice Log*](https://github.com/NickWaldock/practice-log), a chat-based CLI program designed to log the details of a musician's practice routine. The *Talk Practice* project is designed as a forum site for musicians to discuss musical practice with the aim to eventually allow users to log individual practice records and data, and gain analytics and insights on that data. Many music forums exist on all manner of musical topics, manily around the subject of equipment, but there are very few that exist (if any) that center around the topic of musical practice. It is this gap that the *Talk Practice* project attempts to fill.
+
+*The site is currently populated by posts with content generated from [ChatGPT](https://chat.openai.com/)*
 <hr>
 <br>
 <br>
@@ -582,8 +584,8 @@ Tools used in the development of this project include:
     - Static files hosting
 - [Looka](https://looka.com/)
     - Logo design
-- [Random Text Generator](https://randomtextgenerator.com/)
-    - Random text generator for test posts
+- [ChatGPT](https://chat.openai.com/)
+    - Text generator for test posts
 <hr>
 <br />
 <br />

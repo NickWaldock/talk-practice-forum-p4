@@ -297,6 +297,20 @@ Below is the account of all manual testing that has taken place on the project.
     <td>Only available to admin/staff users. A "Category Created!" message is displayed for 2sec to the user</td>
   </tr>
   <tr>
+    <td>CRUD - Send Message: logged-in</td>
+    <td>Sending a message via the contact form</td>
+    <td>On submitting a message to the contact form, if the user is logged in they are forwarded to the main home post list view</td>
+    <td>FAIL</td>
+    <td>Users are directed back to the landing page, not the main post list view **UPDATE** Button added onto the landing page for logged-in users to continue reading without having to log in again</td>
+  </tr>
+  <tr>
+    <td>CRUD - Send Message: Logged out</td>
+    <td>Sending a message via the contact form</td>
+    <td>On submitting a message to the contact form, if the user is not logged in they are forwarded to the landing page</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
+  <tr>
     <td>External Links: Sidebar/Footer Socials</td>
     <td>Clickable icons to navigate to relevant social page</td>
     <td>Icons navigate to the relevant social media page. Pages open in a new tab</td>
@@ -382,7 +396,20 @@ Below is the account of all manual testing that has taken place on the project.
     <td>PASS</td>
     <td></td>
   </tr>
-
+  <tr>
+    <td>Javascript: Django messages dissapear after timeout</td>
+    <td>Go through each of the functions on the front-end to test messages</td>
+    <td>Messages that signal success of login, logout, post creation, post update, post delete, and category add, all appear and dissapear automatically after a few seconds</td>
+    <td>PASS</td>
+    <td>All messages appear and dissapear appropriately</td>
+  </tr>
+  <tr>
+    <td>Javascript: Author field is automatically filled into the post model on add post submission</td>
+    <td>Use admin panel to check status of authorship of a post</td>
+    <td>All posts have the correct and relevant username as author in the admin panel, and when the post is displayed in the front-end</td>
+    <td>PASS</td>
+    <td></td>
+  </tr>
 
 
 

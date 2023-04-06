@@ -52,6 +52,11 @@
                     <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_login' %}" role="button">login</a>
                     <a class="ms-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'account_signup' %}" role="button">register</a>
                 </div>
+                {% if user.is_authenticated %}
+                <div class="body-font mt-5 d-flex justify-content-center">
+                    <a class="me-5 btn btn-lg rounded-0 border border-dark shadow" href="{% url 'home' %}" role="button">start reading</a>
+                </div>
+                {% endif %}
             </div>
         </div>
         <div class="col d-none d-md-block"></div>

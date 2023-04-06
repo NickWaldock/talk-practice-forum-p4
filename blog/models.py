@@ -80,4 +80,4 @@ class Contact(models.Model):
     member = models.BooleanField(default=False)
 
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('welcome')
